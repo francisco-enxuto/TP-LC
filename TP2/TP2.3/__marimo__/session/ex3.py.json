@@ -7,7 +7,7 @@
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "fe0cbb38fd2589fcfca7021e3c6d39e1",
+      "code_hash": "41e06baca4ff110e189b5407ab16aae2",
       "outputs": [
         {
           "type": "data",
@@ -20,7 +20,7 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "e4ff72005e8cbb59fe7da7278272c1b7",
+      "code_hash": "075868757004e94bd515220f9ce367cf",
       "outputs": [
         {
           "type": "data",
@@ -32,13 +32,26 @@
       "console": []
     },
     {
-      "id": "vblA",
-      "code_hash": "6484932531e99d0d67de34be9b878709",
+      "id": "MdSn",
+      "code_hash": "f5797f44bd188669c76d7740d1d3dcbb",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"estados\">Estados</h2>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"k\">assert</span> <span class=\"n\">a</span> <span class=\"o\">&gt;=</span> <span class=\"mi\">0</span> <span class=\"ow\">and</span> <span class=\"n\">b</span> <span class=\"o\">&gt;=</span> <span class=\"mi\">0</span>\n<span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span><span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">=</span> <span class=\"n\">a</span> <span class=\"p\">,</span> <span class=\"n\">b</span> <span class=\"p\">,</span> <span class=\"mi\">0</span>\n<span class=\"mi\">0</span><span class=\"p\">:</span> <span class=\"k\">while</span> <span class=\"ow\">not</span> <span class=\"n\">y</span> <span class=\"o\">==</span> <span class=\"mi\">0</span><span class=\"p\">:</span>\n<span class=\"mi\">1</span><span class=\"p\">:</span>   <span class=\"k\">if</span> <span class=\"n\">even</span><span class=\"p\">(</span><span class=\"n\">y</span><span class=\"p\">):</span>\n<span class=\"mi\">2</span><span class=\"p\">:</span>       <span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">&lt;&lt;</span> <span class=\"mi\">1</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"o\">&gt;&gt;</span> <span class=\"mi\">1</span> <span class=\"p\">,</span> <span class=\"n\">z</span>\n<span class=\"mi\">3</span><span class=\"p\">:</span>   <span class=\"k\">else</span><span class=\"p\">:</span>\n<span class=\"mi\">4</span><span class=\"p\">:</span>       <span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"o\">-</span> <span class=\"mi\">1</span><span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">+</span> <span class=\"n\">x</span>\n<span class=\"mi\">5</span><span class=\"p\">:</span> <span class=\"n\">stop</span>\n</code></pre></div></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"problema-proposto\">Problema proposto</h2>\n<span class=\"paragraph\">Considere o problema descrito no documento +L\u00f3gica Computacional: Multiplica\u00e7\u00e3o de Inteiros . Nesse documento usa-se um \u201cControl Flow Automaton\u201d como  modelo do programa imperativo que calcula a multiplica\u00e7\u00e3o de  inteiros positivos representados por vetores de bits.</span>\n<div class=\"language-mysql highlight\"><pre><span></span><code><span class=\"n\">a</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Construir</span><span class=\"w\"> </span><span class=\"n\">um</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">usando</span><span class=\"w\"> </span><span class=\"n\">BitVec\u2019s</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">tamanho</span><span class=\"w\"> </span><span class=\"n\">$$n$$</span><span class=\"w\"> </span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">descreva</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">comportamento</span><span class=\"w\"> </span><span class=\"n\">deste</span><span class=\"w\"> </span><span class=\"n\">aut\u00f3mato</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">para</span><span class=\"w\"> </span><span class=\"n\">isso</span><span class=\"w\"> </span><span class=\"n\">identifique</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">codifique</span><span class=\"w\"> </span><span class=\"n\">em</span><span class=\"w\"> </span><span class=\"n n-Quoted\">`Z3`</span><span class=\"w\"> </span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"k\">as</span><span class=\"w\"> </span><span class=\"n\">vari\u00e1veis</span><span class=\"w\"> </span><span class=\"k\">do</span><span class=\"w\"> </span><span class=\"n\">modelo</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">inicial</span><span class=\"w\"> </span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">rela\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">transi\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">erro</span><span class=\"p\">.</span>\n<span class=\"n\">b</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Usando</span><span class=\"w\"> </span><span class=\"n\">$$k$$</span><span class=\"o\">-</span><span class=\"n\">indu\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">verifique</span><span class=\"w\"> </span><span class=\"n\">nesse</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"w\"> </span><span class=\"n\">se</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">;</span><span class=\"n\">$$a</span><span class=\"w\"> </span><span class=\"n\">propriedade</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">;(</span><span class=\"n\">x</span><span class=\"o\">*</span><span class=\"n\">y</span><span class=\"w\"> </span><span class=\"o\">+</span><span class=\"w\"> </span><span class=\"n\">z</span><span class=\"w\"> </span><span class=\"o\">=</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"o\">*</span><span class=\"n\">b</span><span class=\"p\">)</span><span class=\"err\">\\</span><span class=\"p\">;</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">;</span><span class=\"n\">$$\u00e9</span><span class=\"w\"> </span><span class=\"n\">um</span><span class=\"w\"> </span><span class=\"n\">invariante</span><span class=\"w\"> </span><span class=\"k\">do</span><span class=\"w\"> </span><span class=\"n\">seu</span><span class=\"w\"> </span><span class=\"n\">comportamento</span><span class=\"p\">.</span>\n<span class=\"n\">c</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Usando</span><span class=\"w\"> </span><span class=\"n\">$$k$$</span><span class=\"o\">-</span><span class=\"n\">indu\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"k\">no</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"w\"> </span><span class=\"n\">acima</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">adicionando</span><span class=\"w\"> </span><span class=\"n\">ao</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">inicial</span><span class=\"w\">  </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">condi\u00e7\u00e3o</span><span class=\"w\">  </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,(</span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"o\">&lt;</span><span class=\"w\"> </span><span class=\"mi\">2</span><span class=\"o\">^</span><span class=\"err\">{</span><span class=\"n\">n</span><span class=\"o\">/</span><span class=\"mi\">2</span><span class=\"err\">}</span><span class=\"p\">)</span><span class=\"err\">\\</span><span class=\"n\">land</span><span class=\"p\">(</span><span class=\"n\">b</span><span class=\"w\"> </span><span class=\"o\">&lt;</span><span class=\"w\"> </span><span class=\"mi\">2</span><span class=\"o\">^</span><span class=\"err\">{</span><span class=\"n\">n</span><span class=\"o\">/</span><span class=\"mi\">2</span><span class=\"err\">}</span><span class=\"p\">)</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">verifique</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">seguran\u00e7a</span><span class=\"w\"> </span><span class=\"k\">do</span><span class=\"w\"> </span><span class=\"n\">programa</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">nomeadamente</span><span class=\"w\">  </span><span class=\"n\">prove</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">com</span><span class=\"w\"> </span><span class=\"n\">tal</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">inicial</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">erro</span><span class=\"w\"> </span><span class=\"n\">nunca</span><span class=\"w\"> </span><span class=\"n\">\u00e9</span><span class=\"w\"> </span><span class=\"n\">acess\u00edvel</span><span class=\"p\">.</span>\n<span class=\"n\">d</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Codifique</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">propriedade</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">anima\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">exprime</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">programa</span><span class=\"w\"> </span><span class=\"n\">termina</span><span class=\"w\"> </span><span class=\"n\">quaisquer</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">sejam</span><span class=\"w\"> </span><span class=\"n\">os</span><span class=\"w\"> </span><span class=\"n\">valores</span><span class=\"w\"> </span><span class=\"n\">iniciais</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">a</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">b</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">prove</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">ela</span><span class=\"w\"> </span><span class=\"n\">se</span><span class=\"w\"> </span><span class=\"n\">verifica</span><span class=\"w\"> </span><span class=\"k\">no</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"w\">  </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">construiu</span><span class=\"p\">.</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "16c535a89d55390e286f60ed3faa3b83",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"estados\">Estados</h2>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"k\">assert</span> <span class=\"n\">a</span> <span class=\"o\">&gt;=</span> <span class=\"mi\">0</span> <span class=\"ow\">and</span> <span class=\"n\">b</span> <span class=\"o\">&gt;=</span> <span class=\"mi\">0</span>\n<span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span><span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">=</span> <span class=\"n\">a</span> <span class=\"p\">,</span> <span class=\"n\">b</span> <span class=\"p\">,</span> <span class=\"mi\">0</span>\n<span class=\"mi\">0</span><span class=\"p\">:</span> <span class=\"k\">while</span> <span class=\"ow\">not</span> <span class=\"n\">y</span> <span class=\"o\">==</span> <span class=\"mi\">0</span><span class=\"p\">:</span>\n<span class=\"mi\">1</span><span class=\"p\">:</span>   <span class=\"k\">if</span> <span class=\"n\">even</span><span class=\"p\">(</span><span class=\"n\">y</span><span class=\"p\">):</span>\n<span class=\"mi\">2</span><span class=\"p\">:</span>       <span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">&lt;&lt;</span> <span class=\"mi\">1</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"o\">&gt;&gt;</span> <span class=\"mi\">1</span> <span class=\"p\">,</span> <span class=\"n\">z</span>\n     <span class=\"k\">else</span><span class=\"p\">:</span>\n<span class=\"mi\">3</span><span class=\"p\">:</span>       <span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"p\">,</span> <span class=\"n\">y</span> <span class=\"o\">-</span> <span class=\"mi\">1</span><span class=\"p\">,</span> <span class=\"n\">z</span> <span class=\"o\">+</span> <span class=\"n\">x</span>\n<span class=\"mi\">4</span><span class=\"p\">:</span> <span class=\"n\">stop</span>\n<span class=\"mi\">5</span><span class=\"p\">:</span> <span class=\"n\">erro</span>\n</code></pre></div></span>"
           }
         }
       ],
@@ -46,6 +59,19 @@
     },
     {
       "id": "bkHC",
+      "code_hash": "9e3e54f69227624abd568e010cba0671",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-a\">Parte a</h1>\n<h2 id=\"construcao-do-sfots\">Constru\u00e7\u00e3o do SFOTS</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
       "code_hash": "b852d5b3f918f903c23717e86b19319a",
       "outputs": [
         {
@@ -58,8 +84,8 @@
       "console": []
     },
     {
-      "id": "lEQa",
-      "code_hash": "dfb07f0e3f19d6567450ece316d18dc0",
+      "id": "PKri",
+      "code_hash": "c425da3429f0f1b8cb5bd6a3f2bd9aa7",
       "outputs": [
         {
           "type": "data",
@@ -71,7 +97,7 @@
       "console": []
     },
     {
-      "id": "PKri",
+      "id": "Xref",
       "code_hash": "f513ad3c5f48feee8b5fc0642feeeccc",
       "outputs": [
         {
@@ -84,8 +110,8 @@
       "console": []
     },
     {
-      "id": "Xref",
-      "code_hash": "e4e52aa472749f3d765d5d219832dd9b",
+      "id": "SFPL",
+      "code_hash": "c1226c6e8258c6d864da4a21de96adf1",
       "outputs": [
         {
           "type": "data",
@@ -97,7 +123,7 @@
       "console": []
     },
     {
-      "id": "SFPL",
+      "id": "BYtC",
       "code_hash": "63799623567393e02af5161502156494",
       "outputs": [
         {
@@ -110,8 +136,8 @@
       "console": []
     },
     {
-      "id": "BYtC",
-      "code_hash": "ad1ee86b4b79ff80afde896c45ca5ba6",
+      "id": "RGSE",
+      "code_hash": "cfa5b6d6158088cd232ff2b1152d4261",
       "outputs": [
         {
           "type": "data",
@@ -123,7 +149,7 @@
       "console": []
     },
     {
-      "id": "RGSE",
+      "id": "Kclp",
       "code_hash": "7b2f7d5d451a8f2a9ad5e694a125948b",
       "outputs": [
         {
@@ -136,8 +162,8 @@
       "console": []
     },
     {
-      "id": "Kclp",
-      "code_hash": "7c0c5279bb984903cc215f086314d547",
+      "id": "emfo",
+      "code_hash": "774c699c5666b2fce981849b85c4c0db",
       "outputs": [
         {
           "type": "data",
@@ -150,10 +176,29 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Estado 0 : pc = 0, x = 33, y = 10, z = 0\nEstado 1 : pc = 1, x = 33, y = 10, z = 0\nEstado 2 : pc = 2, x = 33, y = 10, z = 0\nEstado 3 : pc = 0, x = 66, y = 5, z = 0\nEstado 4 : pc = 1, x = 66, y = 5, z = 0\nEstado 5 : pc = 3, x = 66, y = 5, z = 0\nEstado 6 : pc = 0, x = 66, y = 4, z = 66\nEstado 7 : pc = 1, x = 66, y = 4, z = 66\nEstado 8 : pc = 2, x = 66, y = 4, z = 66\nEstado 9 : pc = 0, x = 132, y = 2, z = 66\nEstado 10 : pc = 1, x = 132, y = 2, z = 66\nEstado 11 : pc = 2, x = 132, y = 2, z = 66\nEstado 12 : pc = 0, x = 264, y = 1, z = 66\nEstado 13 : pc = 1, x = 264, y = 1, z = 66\nEstado 14 : pc = 3, x = 264, y = 1, z = 66\nEstado 15 : pc = 0, x = 264, y = 0, z = 330\nEstado 16 : pc = 4, x = 264, y = 0, z = 330\n",
+          "text": "Estado   0 : pc = 0, x =   5, y =  50, z =   0\nEstado   1 : pc = 1, x =   5, y =  50, z =   0\nEstado   2 : pc = 2, x =   5, y =  50, z =   0\nEstado   3 : pc = 0, x =  10, y =  25, z =   0\nEstado   4 : pc = 1, x =  10, y =  25, z =   0\nEstado   5 : pc = 3, x =  10, y =  25, z =   0\nEstado   6 : pc = 0, x =  10, y =  24, z =  10\nEstado   7 : pc = 1, x =  10, y =  24, z =  10\nEstado   8 : pc = 2, x =  10, y =  24, z =  10\nEstado   9 : pc = 0, x =  20, y =  12, z =  10\nEstado  10 : pc = 1, x =  20, y =  12, z =  10\nEstado  11 : pc = 2, x =  20, y =  12, z =  10\nEstado  12 : pc = 0, x =  40, y =   6, z =  10\nEstado  13 : pc = 1, x =  40, y =   6, z =  10\nEstado  14 : pc = 2, x =  40, y =   6, z =  10\nEstado  15 : pc = 0, x =  80, y =   3, z =  10\nEstado  16 : pc = 1, x =  80, y =   3, z =  10\nEstado  17 : pc = 3, x =  80, y =   3, z =  10\nEstado  18 : pc = 0, x =  80, y =   2, z =  90\nEstado  19 : pc = 1, x =  80, y =   2, z =  90\nEstado  20 : pc = 2, x =  80, y =   2, z =  90\nEstado  21 : pc = 0, x = 160, y =   1, z =  90\nEstado  22 : pc = 1, x = 160, y =   1, z =  90\nEstado  23 : pc = 3, x = 160, y =   1, z =  90\nEstado  24 : pc = 0, x = 160, y =   0, z = 250\nEstado  25 : pc = 4, x = 160, y =   0, z = 250\n",
           "mimetype": "text/plain"
         }
       ]
+    },
+    {
+      "id": "ZNTu",
+      "code_hash": "621c85fc30eea3ceafc0d2bf482682f9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-b\">Parte b</h1>\n<h2 id=\"inducao-x-times-y-z-a-times-b\">Indu\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex></h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PMwf",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
     }
   ]
 }
