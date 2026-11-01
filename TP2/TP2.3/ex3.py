@@ -7,7 +7,7 @@ app = marimo.App(width="full")
 @app.cell
 def _():
     import marimo as mo
-    from pysmt.shortcuts import Symbol, BV, And, Equals, get_model, Int, GE, Or, GT, BVSGT, BVSLE, BVSLT, BVSGE, Not, BVSRem, BVLShl, BVLShr, BVSub, BVAdd, Solver, BVURem, BVUGE, BVULT
+    from pysmt.shortcuts import Symbol, BV, And, Equals, get_model, Int, GE, Or, GT, BVSGT, BVSLE, BVSLT, BVSGE, Not, BVSRem, BVLShl, BVLShr, BVSub, BVAdd, Solver, BVURem, BVUGE, BVULT, BVMul
     from pysmt.typing import BVType, INT
 
     return (
@@ -16,6 +16,8 @@ def _():
         BVAdd,
         BVLShl,
         BVLShr,
+        BVMul,
+        BVSGE,
         BVSLT,
         BVSRem,
         BVSub,
@@ -23,7 +25,6 @@ def _():
         BVULT,
         BVURem,
         Equals,
-        GE,
         INT,
         Int,
         Not,
@@ -36,9 +37,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _():
-    # declaração de variáveis
-    N = 16
-    return (N,)
+    N = 8
+    SIGNAL = False
+    return N, SIGNAL
 
 
 @app.cell(hide_code=True)
@@ -93,7 +94,7 @@ def _(mo):
 
 
 @app.cell
-def _(And, BV, BVType, Equals, INT, Int, N, Symbol):
+def _(And, BV, BVSGE, BVType, Equals, INT, Int, N, SIGNAL, Symbol):
     def declare(i):
         state = {}
         state['pc'] = Symbol('pc'+str(i),INT)
@@ -104,15 +105,23 @@ def _(And, BV, BVType, Equals, INT, Int, N, Symbol):
         state['b'] = Symbol('b'+str(i),BVType(N))
         return state
 
-    def init(state, i):
-        return And(
+    def init(state, i=None):
+        constraints = [
             Equals(state['pc'], Int(0)),
-            Equals(state['x'], i['a']),
-            Equals(state['y'], i['b']),
-            Equals(state['z'], BV(0, N)),
-            Equals(state['a'], i['a']),
-            Equals(state['b'], i['b'])
-        )
+            Equals(state['x'], state['a']),
+            Equals(state['y'], state['b']),
+            Equals(state['z'], BV(0, N))
+        ]
+
+        if SIGNAL:
+            constraints.append(BVSGE(state['a'], BV(0,N)))
+            constraints.append(BVSGE(state['b'], BV(0,N)))
+
+        if i is not None:
+            constraints.append(Equals(state['a'], i['a']))
+            constraints.append(Equals(state['b'], i['b']))
+
+        return And(constraints)
 
     return declare, init
 
@@ -142,6 +151,7 @@ def _(
     N,
     Not,
     Or,
+    SIGNAL,
 ):
     def equal(curr, prox, list_symbol):
         return [Equals(prox[c], curr[c]) for c in list_symbol]
@@ -149,19 +159,19 @@ def _(
     def error(state):
         return Equals(state['pc'], Int(5))
 
-    def trans(curr,prox, signal):
+    def trans(curr,prox):
         return Or(
             # casos de erro
             And(
                 Equals(curr['pc'], Int(2)),
-                BVSLT(BVLShl(curr['x'], 1), BV(0,N)) if signal else BVULT(BVLShl(curr['x'], 1), curr['x']),
+                BVSLT(BVLShl(curr['x'], 1), BV(0,N)) if SIGNAL else BVULT(BVLShl(curr['x'], 1), curr['x']),
                 error(prox),
                 *equal(curr, prox, ['x', 'y', 'z', 'a', 'b'])
-    
+
             ),
             And(
                 Equals(curr['pc'], Int(3)),
-                BVSLT(BVAdd(curr['z'], curr['x']), BV(0,N)) if signal else BVULT(BVAdd(curr['z'], curr['x']), curr['z']),
+                BVSLT(BVAdd(curr['z'], curr['x']), BV(0,N)) if SIGNAL else BVULT(BVAdd(curr['z'], curr['x']), curr['z']),
                 error(prox),
                 *equal(curr, prox, ['x', 'y', 'z', 'a', 'b'])
             ),
@@ -175,14 +185,14 @@ def _(
             # caso em que y é par
             And(
                 Equals(curr['pc'], Int(1)),
-                Equals(BVSRem(curr['y'], BV(2, N)), BV(0, N)) if signal else Equals(BVURem(curr['y'], BV(2, N)), BV(0, N)),
+                Equals(BVSRem(curr['y'], BV(2, N)), BV(0, N)) if SIGNAL else Equals(BVURem(curr['y'], BV(2, N)), BV(0, N)),
                 Equals(prox['pc'], Int(2)),
                 *equal(curr, prox, ['x', 'y', 'z', 'a', 'b'])
             ),
             And(
                 Equals(curr['pc'], Int(2)),
                 Equals(prox['pc'], Int(0)),
-                Not(BVSLT(BVLShl(curr['x'], 1), BV(0,N))) if signal else Not(BVULT(BVLShl(curr['x'], 1), curr['x'])),
+                Not(BVSLT(BVLShl(curr['x'], 1), BV(0,N))) if SIGNAL else Not(BVULT(BVLShl(curr['x'], 1), curr['x'])),
                 Equals(prox['x'], BVLShl(curr['x'], 1)),
                 Equals(prox['y'], BVLShr(curr['y'], 1)),
                 *equal(curr, prox, ['z', 'a', 'b'])
@@ -190,14 +200,14 @@ def _(
             # caso em que y é ímpar
             And(
                 Equals(curr['pc'], Int(1)),
-                Equals(BVSRem(curr['y'], BV(2, N)), BV(1, N)) if signal else Equals(BVURem(curr['y'], BV(2, N)), BV(1, N)),
+                Equals(BVSRem(curr['y'], BV(2, N)), BV(1, N)) if SIGNAL else Equals(BVURem(curr['y'], BV(2, N)), BV(1, N)),
                 Equals(prox['pc'], Int(3)),
                 *equal(curr, prox, ['x', 'y', 'z', 'a', 'b'])
             ),
             And(
                 Equals(curr['pc'], Int(3)),
                 Equals(prox['pc'], Int(0)),
-                Not(BVSLT(BVAdd(curr['z'], curr['x']), BV(0,N))) if signal else Not(BVULT(BVAdd(curr['z'], curr['x']), curr['z'])),
+                Not(BVSLT(BVAdd(curr['z'], curr['x']), BV(0,N))) if SIGNAL else Not(BVULT(BVAdd(curr['z'], curr['x']), curr['z'])),
                 Equals(prox['y'], BVSub(curr['y'], BV(1, N))),
                 Equals(prox['z'], BVAdd(curr['z'], curr['x'])),
                 *equal(curr, prox, ['x', 'a', 'b'])
@@ -234,7 +244,7 @@ def _(mo):
 
 @app.cell
 def _(Equals, Int, Or, Solver, declare, init, trans):
-    def gera_traco(initial, signal=False, kmax=300):
+    def gera_traco(initial, kmax=300):
 
         with Solver(name="z3") as s:
 
@@ -261,7 +271,7 @@ def _(Equals, Int, Or, Solver, declare, init, trans):
 
                 s.pop()
                 states.append(declare(c+1))
-                s.add_assertion(trans(states[c], states[c+1], signal))
+                s.add_assertion(trans(states[c], states[c+1]))
 
             print("Não foi encontrado um traço válido")
 
@@ -278,7 +288,7 @@ def _(mo):
 
 @app.cell
 def _(BV, Int, N, gera_traco):
-    i = {'pc': Int(0), 'a' : BV(5, N), 'b' : BV(50, N)}
+    i = {'pc': Int(0), 'a' : BV(2, N), 'b' : BV(1, N)}
     gera_traco(i)
     return
 
@@ -288,54 +298,62 @@ def _(mo):
     mo.md(r"""
     # Parte b
     ## Indução $x \times y + z = a \times b$
+
+    ## 0-Indução
+
+    > Para todo o estado $$\,x\,$$
+    >        (a) $$\quad \neg\,P(x)\quad$$  é  inconsistente
+
+    $$1$$-Indução
+
+    > Para todo par de estados $$\,x,y\,$$ deve-se verificar
+    >        (a) $$\quad\mathsf{init}(x)\,\land\,\neg P(x)\quad$$  é  inconsistente
+    >        (b) $$\quad\mathsf{trans}(x,y) \,\land\, P(x)\,\land\,\neg\,P(y)\quad$$ é inconsistente
     """)
     return
 
 
 @app.cell
-def _(And, GE, Int, Not, Solver, declare, init, trans, w):
-    def bmc_always(declare,init,trans,inv,K):
-        for k in range(1,K+1):
+def _(BVAdd, BVMul, Equals, Not, Or, Solver, declare, init, trans):
+    def k_inducao(inv, K, initial=None):
+        w = 6
+        for k in range(1, K + 1):
+        
+            with Solver(name="z3") as s:
+                states = [declare(i) for i in range(k)]
+                s.add_assertion(init(states[0], initial))
+            
+                for i in range(k - 1):
+                    s.add_assertion(trans(states[i], states[i + 1]))
+                
+                s.add_assertion(Or([Not(inv(st)) for st in states]))
+            
+                if s.solve():
+                    print(f"Falso. Contra-exemplo no caso base, k = {k}")
+                    return False
+                
             with Solver(name="z3") as s:
             
-                states = [declare(i) for i in range(k)]
-
-                constraints = []
-
-                s.add_assertion(init(states[0]))
+                states = [declare(i) for i in range(k + 1)]
             
-                for i in range(k-1):
-                    constraints.add_assertion(trans(states[i], states[i+1]))
+                for i in range(k):
+                    s.add_assertion(trans(states[i], states[i + 1]))
+                    s.add_assertion(inv(states[i]))
+            
+                s.add_assertion(Not(inv(states[-1])))
+            
+                if not s.solve():
+                    print(f"Provado com k = {k}")
+                    return True
 
-                constraints.add_assertion(Not(inv(states[-1])))
-
-                s.add_assertion(And(constraints))
-
-                if s.solve():
-                    model = s.get_model()
-                    for i, st in enumerate(states):
-                        pc_val = model.get_value(st['pc']).constant_value()
-                        x_val = model.get_value(st['x']).constant_value()
-                        y_val = model.get_value(st['y']).constant_value()
-                        z_val = model.get_value(st['z']).constant_value()
-                        a_val = model.get_value(st['a']).constant_value()
-                        b_val = model.get_value(st['b']).constant_value()
-                        print(f"Estado {i:>3} : pc = {pc_val:>1}, "
-                              f"x = {x_val:>{w}}, "
-                              f"y = {y_val:>{w}}, "
-                              f"z = {z_val:>{w}}, "
-                              f"x * y + z = {x_val * y_val + z_val}, "
-                              f"a * b = {a_val * b_val}"
-                        )
-                    return False 
-        print("Nenhum contra-exemplo encontrado")
-        return
+        print(f"Nenhum k até {K} prova a propriedade")
+        return None
 
 
-    def nonnegative(state):
-        return GE(state['x'], Int(0))
+    def inv(state):
+        return Equals(BVAdd(BVMul(state['x'], state['y']), state['z']), BVMul(state['a'], state['b']))
 
-    bmc_always(declare,init,trans,nonnegative,20)
+    k_inducao(inv,6)
     return
 
 

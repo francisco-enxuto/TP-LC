@@ -7,7 +7,7 @@
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "41e06baca4ff110e189b5407ab16aae2",
+      "code_hash": "20e6bc5c4ec86f13ce6193f116674b97",
       "outputs": [
         {
           "type": "data",
@@ -20,7 +20,7 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "075868757004e94bd515220f9ce367cf",
+      "code_hash": "2ac7578e926376e1e3e36b75e149eb99",
       "outputs": [
         {
           "type": "data",
@@ -32,7 +32,7 @@
       "console": []
     },
     {
-      "id": "MdSn",
+      "id": "vblA",
       "code_hash": "f5797f44bd188669c76d7740d1d3dcbb",
       "outputs": [
         {
@@ -45,7 +45,7 @@
       "console": []
     },
     {
-      "id": "vblA",
+      "id": "bkHC",
       "code_hash": "16c535a89d55390e286f60ed3faa3b83",
       "outputs": [
         {
@@ -58,7 +58,7 @@
       "console": []
     },
     {
-      "id": "bkHC",
+      "id": "lEQa",
       "code_hash": "9e3e54f69227624abd568e010cba0671",
       "outputs": [
         {
@@ -71,7 +71,7 @@
       "console": []
     },
     {
-      "id": "lEQa",
+      "id": "PKri",
       "code_hash": "b852d5b3f918f903c23717e86b19319a",
       "outputs": [
         {
@@ -84,8 +84,8 @@
       "console": []
     },
     {
-      "id": "PKri",
-      "code_hash": "c425da3429f0f1b8cb5bd6a3f2bd9aa7",
+      "id": "Xref",
+      "code_hash": "169c98d4cdeb926705f134d0bf73eb23",
       "outputs": [
         {
           "type": "data",
@@ -97,7 +97,7 @@
       "console": []
     },
     {
-      "id": "Xref",
+      "id": "SFPL",
       "code_hash": "f513ad3c5f48feee8b5fc0642feeeccc",
       "outputs": [
         {
@@ -110,8 +110,8 @@
       "console": []
     },
     {
-      "id": "SFPL",
-      "code_hash": "c1226c6e8258c6d864da4a21de96adf1",
+      "id": "BYtC",
+      "code_hash": "37d05878b09b618d389258d3c240f656",
       "outputs": [
         {
           "type": "data",
@@ -123,7 +123,7 @@
       "console": []
     },
     {
-      "id": "BYtC",
+      "id": "RGSE",
       "code_hash": "63799623567393e02af5161502156494",
       "outputs": [
         {
@@ -136,8 +136,8 @@
       "console": []
     },
     {
-      "id": "RGSE",
-      "code_hash": "cfa5b6d6158088cd232ff2b1152d4261",
+      "id": "Kclp",
+      "code_hash": "86b0505951cbbdddbcb2a51e9f63314f",
       "outputs": [
         {
           "type": "data",
@@ -149,7 +149,7 @@
       "console": []
     },
     {
-      "id": "Kclp",
+      "id": "emfo",
       "code_hash": "7b2f7d5d451a8f2a9ad5e694a125948b",
       "outputs": [
         {
@@ -162,8 +162,8 @@
       "console": []
     },
     {
-      "id": "emfo",
-      "code_hash": "774c699c5666b2fce981849b85c4c0db",
+      "id": "Hstk",
+      "code_hash": "9d6a80ccc86cfdd77a9a2a98e92fabe3",
       "outputs": [
         {
           "type": "data",
@@ -176,29 +176,43 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Estado   0 : pc = 0, x =   5, y =  50, z =   0\nEstado   1 : pc = 1, x =   5, y =  50, z =   0\nEstado   2 : pc = 2, x =   5, y =  50, z =   0\nEstado   3 : pc = 0, x =  10, y =  25, z =   0\nEstado   4 : pc = 1, x =  10, y =  25, z =   0\nEstado   5 : pc = 3, x =  10, y =  25, z =   0\nEstado   6 : pc = 0, x =  10, y =  24, z =  10\nEstado   7 : pc = 1, x =  10, y =  24, z =  10\nEstado   8 : pc = 2, x =  10, y =  24, z =  10\nEstado   9 : pc = 0, x =  20, y =  12, z =  10\nEstado  10 : pc = 1, x =  20, y =  12, z =  10\nEstado  11 : pc = 2, x =  20, y =  12, z =  10\nEstado  12 : pc = 0, x =  40, y =   6, z =  10\nEstado  13 : pc = 1, x =  40, y =   6, z =  10\nEstado  14 : pc = 2, x =  40, y =   6, z =  10\nEstado  15 : pc = 0, x =  80, y =   3, z =  10\nEstado  16 : pc = 1, x =  80, y =   3, z =  10\nEstado  17 : pc = 3, x =  80, y =   3, z =  10\nEstado  18 : pc = 0, x =  80, y =   2, z =  90\nEstado  19 : pc = 1, x =  80, y =   2, z =  90\nEstado  20 : pc = 2, x =  80, y =   2, z =  90\nEstado  21 : pc = 0, x = 160, y =   1, z =  90\nEstado  22 : pc = 1, x = 160, y =   1, z =  90\nEstado  23 : pc = 3, x = 160, y =   1, z =  90\nEstado  24 : pc = 0, x = 160, y =   0, z = 250\nEstado  25 : pc = 4, x = 160, y =   0, z = 250\n",
+          "text": "Estado   0 : pc = 0, x = 2, y = 1, z = 0\nEstado   1 : pc = 1, x = 2, y = 1, z = 0\nEstado   2 : pc = 3, x = 2, y = 1, z = 0\nEstado   3 : pc = 0, x = 2, y = 0, z = 2\nEstado   4 : pc = 4, x = 2, y = 0, z = 2\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "ZNTu",
-      "code_hash": "621c85fc30eea3ceafc0d2bf482682f9",
+      "id": "nWHF",
+      "code_hash": "b4d9dac639fe986a8158fc64cd520190",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-b\">Parte b</h1>\n<h2 id=\"inducao-x-times-y-z-a-times-b\">Indu\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex></h2></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-b\">Parte b</h1>\n<h2 id=\"inducao-x-times-y-z-a-times-b\">Indu\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex></h2>\n<h2 id=\"0-inducao\">0-Indu\u00e7\u00e3o</h2>\n<blockquote>\n<span class=\"paragraph\">Para todo o estado $<marimo-tex class=\"arithmatex\">||(\\,x\\,||)</marimo-tex>$\n       (a) $<marimo-tex class=\"arithmatex\">||(\\quad \\neg\\,P(x)\\quad||)</marimo-tex>$  \u00e9  inconsistente</span>\n</blockquote>\n<span class=\"paragraph\">$<marimo-tex class=\"arithmatex\">||(1||)</marimo-tex>$-Indu\u00e7\u00e3o</span>\n<blockquote>\n<span class=\"paragraph\">Para todo par de estados $<marimo-tex class=\"arithmatex\">||(\\,x,y\\,||)</marimo-tex>$ deve-se verificar\n       (a) $<marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{init}(x)\\,\\land\\,\\neg P(x)\\quad||)</marimo-tex>$  \u00e9  inconsistente\n       (b) $<marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{trans}(x,y) \\,\\land\\, P(x)\\,\\land\\,\\neg\\,P(y)\\quad||)</marimo-tex>$ \u00e9 inconsistente</span>\n</blockquote></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "PMwf",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
+      "id": "iLit",
+      "code_hash": "5b02026b08fe0cdcdfb3c2371769c4f2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>True</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Provado com k = 2\n",
+          "mimetype": "text/plain"
+        }
+      ]
     }
   ]
 }
