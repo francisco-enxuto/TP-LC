@@ -7,7 +7,7 @@
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "20e6bc5c4ec86f13ce6193f116674b97",
+      "code_hash": "eecd29e6d06a916f3211b94456b82e4d",
       "outputs": [
         {
           "type": "data",
@@ -111,7 +111,7 @@
     },
     {
       "id": "BYtC",
-      "code_hash": "37d05878b09b618d389258d3c240f656",
+      "code_hash": "d6bea8ce3cca4a25e0644364fab75d07",
       "outputs": [
         {
           "type": "data",
@@ -196,7 +196,7 @@
     },
     {
       "id": "iLit",
-      "code_hash": "5b02026b08fe0cdcdfb3c2371769c4f2",
+      "code_hash": "7fdee787b9fb07ab6beaec65361d55ca",
       "outputs": [
         {
           "type": "data",
@@ -210,6 +210,131 @@
           "type": "stream",
           "name": "stdout",
           "text": "Provado com k = 2\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "4030dadb118424136eb3b9c9094c67df",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-c\">Parte c</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "0540dcb828a509f1c2a02c9da0d09627",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>False</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Falso. Contra-exemplo no caso base, k = 4\nEstado   0 : pc = 0, x = 254, y = 128, z =   0\nEstado   1 : pc = 1, x = 254, y = 128, z =   0\nEstado   2 : pc = 2, x = 254, y = 128, z =   0\nEstado   3 : pc = 5, x = 254, y = 128, z =   0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "d1d8ae22c8527c03526f74e337749d6b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "ee45705a823faced859507153f0543ee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "d69325d4fbfd73875316c137ef6aa6df",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>True</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Provado com k = 47\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "82952c6d325826de95ca6d8e00840455",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-d\">parte d</h2>\n<span class=\"paragraph\">Quer-se provar que o algoritmo termina e termina corretamente usando verifica\u00e7\u00e3o em tra\u00e7os infinitos; nomeadamente usando indu\u00e7\u00e3o. Formalmente queremos provar que existe um estado onde se verifica $<marimo-tex class=\"arithmatex\">||(\\;(z=0)\\;||)</marimo-tex>$; isto \u00e9, temos de provar que se verifica uma propriedade de anima\u00e7\u00e3o $<marimo-tex class=\"arithmatex\">||(\\;\\mathsf{F}\\,(z=0)||)</marimo-tex>$.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "0aa1486bc686b3ffbc866d3afdb60aa7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "85bb205b93e1f84cfc632caf85cc9f65",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Nenhum contra-exemplo encontrado at\u00e9 50\n",
           "mimetype": "text/plain"
         }
       ]

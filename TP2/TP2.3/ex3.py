@@ -7,7 +7,7 @@ app = marimo.App(width="full")
 @app.cell
 def _():
     import marimo as mo
-    from pysmt.shortcuts import Symbol, BV, And, Equals, get_model, Int, GE, Or, GT, BVSGT, BVSLE, BVSLT, BVSGE, Not, BVSRem, BVLShl, BVLShr, BVSub, BVAdd, Solver, BVURem, BVUGE, BVULT, BVMul
+    from pysmt.shortcuts import Symbol, BV, And, Equals, get_model, Int, GE, Or, GT, BVSGT, BVSLE, BVSLT, BVSGE, Not, BVSRem, BVLShl, BVLShr, BVSub, BVAdd, Solver, BVURem, BVUGE, BVULT, BVMul, NotEquals
     from pysmt.typing import BVType, INT
 
     return (
@@ -28,6 +28,7 @@ def _():
         INT,
         Int,
         Not,
+        NotEquals,
         Or,
         Solver,
         Symbol,
@@ -159,6 +160,9 @@ def _(
     def error(state):
         return Equals(state['pc'], Int(5))
 
+    def stop(state):
+        return Equals(state['pc'], Int(4))
+
     def trans(curr,prox):
         return Or(
             # casos de erro
@@ -231,7 +235,7 @@ def _(
             )
         )
 
-    return (trans,)
+    return error, stop, trans
 
 
 @app.cell(hide_code=True)
@@ -318,30 +322,38 @@ def _(BVAdd, BVMul, Equals, Not, Or, Solver, declare, init, trans):
     def k_inducao(inv, K, initial=None):
         w = 6
         for k in range(1, K + 1):
-        
+
             with Solver(name="z3") as s:
                 states = [declare(i) for i in range(k)]
                 s.add_assertion(init(states[0], initial))
-            
+    
                 for i in range(k - 1):
                     s.add_assertion(trans(states[i], states[i + 1]))
-                
+        
                 s.add_assertion(Or([Not(inv(st)) for st in states]))
-            
+    
                 if s.solve():
                     print(f"Falso. Contra-exemplo no caso base, k = {k}")
+                    model = s.get_model()
+                    w = len(str(model.get_value(states[-1]['x']).constant_value()))
+                    for i, st in enumerate(states):
+                        pc_val = model.get_value(st['pc']).constant_value()
+                        x_val = model.get_value(st['x']).constant_value()
+                        y_val = model.get_value(st['y']).constant_value()
+                        z_val = model.get_value(st['z']).constant_value()
+                        print(f"Estado {i:>3} : pc = {pc_val:>1}, x = {x_val:>{w}}, y = {y_val:>{w}}, z = {z_val:>{w}}")
                     return False
-                
+        
             with Solver(name="z3") as s:
-            
+    
                 states = [declare(i) for i in range(k + 1)]
-            
+    
                 for i in range(k):
                     s.add_assertion(trans(states[i], states[i + 1]))
                     s.add_assertion(inv(states[i]))
-            
+    
                 s.add_assertion(Not(inv(states[-1])))
-            
+    
                 if not s.solve():
                     print(f"Provado com k = {k}")
                     return True
@@ -353,7 +365,163 @@ def _(BVAdd, BVMul, Equals, Not, Or, Solver, declare, init, trans):
     def inv(state):
         return Equals(BVAdd(BVMul(state['x'], state['y']), state['z']), BVMul(state['a'], state['b']))
 
-    k_inducao(inv,6)
+    k_inducao(inv,10)
+    return (k_inducao,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Parte c
+    """)
+    return
+
+
+@app.cell
+def _(k_inducao, noterror):
+    k_inducao(noterror,10)
+    return
+
+
+@app.cell
+def _(And, BV, BVSGE, BVSLT, BVULT, Equals, Int, N, SIGNAL):
+    def init2(state, i=None):
+        constraints = [
+            Equals(state['pc'], Int(0)),
+            Equals(state['x'], state['a']),
+            Equals(state['y'], state['b']),
+            Equals(state['z'], BV(0, N))
+        ]
+
+        if SIGNAL:
+            constraints.append(BVSGE(state['a'], BV(0,N)))
+            constraints.append(BVSGE(state['b'], BV(0,N)))
+            constraints.append(BVSLT(state['a'], BV(2**(N/2),N)))
+            constraints.append(BVSLT(state['b'], BV(2**(N/2),N)))
+
+        else:
+            constraints.append(BVULT(state['a'], BV(2**int(N/2),N)))
+            constraints.append(BVULT(state['b'], BV(2**int(N/2),N)))
+
+        if i is not None:
+            constraints.append(Equals(state['a'], i['a']))
+            constraints.append(Equals(state['b'], i['b']))
+
+        return And(constraints)
+
+    return (init2,)
+
+
+@app.cell
+def _(Not, Or, Solver, declare, init2, trans):
+    def k_inducao2(inv, K, initial=None):
+        w = 6
+        for k in range(1, K + 1):
+
+            with Solver(name="z3") as s:
+                states = [declare(i) for i in range(k)]
+                s.add_assertion(init2(states[0], initial))
+    
+                for i in range(k - 1):
+                    s.add_assertion(trans(states[i], states[i + 1]))
+        
+                s.add_assertion(Or([Not(inv(st)) for st in states]))
+    
+                if s.solve():
+                    print(f"Falso. Contra-exemplo no caso base, k = {k}")
+                    return False
+        
+            with Solver(name="z3") as s:
+    
+                states = [declare(i) for i in range(k + 1)]
+    
+                for i in range(k):
+                    s.add_assertion(trans(states[i], states[i + 1]))
+                    s.add_assertion(inv(states[i]))
+    
+                s.add_assertion(Not(inv(states[-1])))
+    
+                if not s.solve():
+                    print(f"Provado com k = {k}")
+                    return True
+
+        print(f"Nenhum k até {K} prova a propriedade")
+        return None
+
+    return (k_inducao2,)
+
+
+@app.cell
+def _(Int, NotEquals, k_inducao2):
+    def noterror(state):
+        return NotEquals(state['pc'], Int(5))
+
+    k_inducao2(noterror, 100)
+    return (noterror,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## parte d
+    Quer-se provar que o algoritmo termina e termina corretamente usando verificação em traços infinitos; nomeadamente usando indução. Formalmente queremos provar que existe um estado onde se verifica $$\;(z=0)\;$$; isto é, temos de provar que se verifica uma propriedade de animação $$\;\mathsf{F}\,(z=0)$$.
+    """)
+    return
+
+
+@app.cell
+def _(And, Not, Or, Solver, declare, init, trans):
+    def bmc_eventually(prop,bound, initial=None):
+        for k in range(1,bound+1):
+             with Solver(name="z3") as s:
+        
+                # completar
+                states = [declare(i) for i in range(k)]
+                    
+                constraints = []
+
+                constraints.append(init(states[0], initial))
+                for i in range(k-1):
+                    constraints.append(trans(states[i], states[i+1]))
+
+                for st in states:
+                    constraints.append(Not(prop(st)))
+
+                loop = []
+
+                for j in range(k-1):
+                    loop.append(trans(states[-1],states[j]))
+
+                constraints.append(Or(loop))
+
+                s.add_assertion(And(constraints))
+
+                if s.solve():
+                    model = s.get_model()
+                    # print(model)
+                    for i, st in enumerate(states):
+                        pc_val = model.get_value(st['pc'])
+                        x_val = model.get_value(st['x'])
+                        print(f"Estado {i} : pc = {pc_val}, x = {x_val}")
+
+                    for j in range(k):
+                        if model.get_py_value(And(trans(states[-1], states[j]))):
+                            print(f"Loop de {k-1} para {j}")
+                            break
+
+                    return False
+        print(f"Nenhum contra-exemplo encontrado até {bound}")
+        return 
+
+    return (bmc_eventually,)
+
+
+@app.cell
+def _(Or, bmc_eventually, error, stop):
+    def prop(state):
+        return Or(stop(state), error(state))
+
+    bmc_eventually(prop, 50)
     return
 
 
