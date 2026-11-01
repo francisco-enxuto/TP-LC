@@ -37,6 +37,14 @@ def _():
 
 
 @app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Variáveis globais
+    """)
+    return
+
+
+@app.cell(hide_code=True)
 def _():
     N = 8
     SIGNAL = False
@@ -46,14 +54,17 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ## Problema proposto
-    Considere o problema descrito no documento +Lógica Computacional: Multiplicação de Inteiros . Nesse documento usa-se um “Control Flow Automaton” como  modelo do programa imperativo que calcula a multiplicação de  inteiros positivos representados por vetores de bits.
+    ## Exercício 3
+    Considere o problema descrito no documento [+Lógica Computacional: Multiplicação de Inteiros](https://www.dropbox.com/scl/fi/zozzuriwaw7db9abpewyh/Logica-Computacional-Multiplicacao-de-Inteiros.paper?rlkey=j92tgvb8emq3ybb0aiv8jz33q&dl=0) . Nesse documento usa-se um “Control Flow Automaton” como  modelo do programa imperativo que calcula a multiplicação de  inteiros positivos representados por vetores de bits.
+
+    ![image](public/p.png)
 
 
-        a. Construir um SFOTS, usando BitVec’s de tamanho $$n$$ , que descreva o comportamento deste autómato; para isso identifique e codifique em `Z3` , as variáveis do modelo, o estado inicial , a relação de transição e o estado de erro.
-        b. Usando $$k$$-indução verifique nesse SFOTS se $$\;$$a propriedade $$\;(x*y + z = a*b)\;$$ $$\;$$é um invariante do seu comportamento.
-        c. Usando $$k$$-indução no SFOTS acima e adicionando ao estado inicial  a condição  $$\,$$ $$\,(a < 2^{n/2})\land(b < 2^{n/2})\,$$, verifique a segurança do programa; nomeadamente  prove que, com tal estado inicial, o estado de erro nunca é acessível.
-        d. Codifique a propriedade de animação que exprime que o programa termina quaisquer que sejam os valores iniciais de $$\,a\,$$ e $$\,b\,$$ e prove que ela se verifica no SFOTS  que construiu.
+
+    *    a.  Construir um SFOTS, usando BitVec’s de tamanho $n$ , que descreva o comportamento deste autómato; para isso identifique e codifique em `Z3` , as variáveis do modelo, o estado inicial , a relação de transição e o estado de erro.
+    *    b. Usando $k$-indução verifique nesse SFOTS se a propriedade $x \times y + z = a \times b$ é um invariante do seu comportamento.
+    *    c. Usando $k$-indução no SFOTS acima e adicionando ao estado inicial  a condição  $a < 2^{n/2} \land b < 2^{n/2}$, verifique a segurança do programa; nomeadamente  prove que, com tal estado inicial, o estado de erro nunca é acessível.
+    *    d. Codifique a propriedade de animação que exprime que o programa termina quaisquer que sejam os valores iniciais de $a$ e $b$ e prove que ela se verifica no SFOTS  que construiu.
     """)
     return
 
@@ -82,14 +93,7 @@ def _(mo):
     mo.md(r"""
     # Parte a
     ## Construção do SFOTS
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    ## Declaração de estados
+    Começamos pela declaração dos estados e a inicialização do primeiro estado, de acordo com as regras indicadas no início do programa.
     """)
     return
 
@@ -292,7 +296,7 @@ def _(mo):
 
 @app.cell
 def _(BV, Int, N, gera_traco):
-    i = {'pc': Int(0), 'a' : BV(2, N), 'b' : BV(1, N)}
+    i = {'pc': Int(0), 'a' : BV(2, N), 'b' : BV(25, N)}
     gera_traco(i)
     return
 
@@ -303,16 +307,16 @@ def _(mo):
     # Parte b
     ## Indução $x \times y + z = a \times b$
 
-    ## 0-Indução
+    ## $0$-Indução
 
-    > Para todo o estado $$\,x\,$$
-    >        (a) $$\quad \neg\,P(x)\quad$$  é  inconsistente
+    > Para todo o estado $x$
+    *        (a) $\neg\,P(x)$  é  inconsistente
 
-    $$1$$-Indução
+    $1$-Indução
 
-    > Para todo par de estados $$\,x,y\,$$ deve-se verificar
-    >        (a) $$\quad\mathsf{init}(x)\,\land\,\neg P(x)\quad$$  é  inconsistente
-    >        (b) $$\quad\mathsf{trans}(x,y) \,\land\, P(x)\,\land\,\neg\,P(y)\quad$$ é inconsistente
+    > Para todo par de estados $x,y$ deve-se verificar:
+    *        (a) $\quad\mathsf{init}(x)\,\land\,\neg P(x)\quad$  é  inconsistente
+    *        (b) $\quad\mathsf{trans}(x,y) \,\land\, P(x)\,\land\,\neg\,P(y)\quad$ é inconsistente
     """)
     return
 
@@ -326,12 +330,12 @@ def _(BVAdd, BVMul, Equals, Not, Or, Solver, declare, init, trans):
             with Solver(name="z3") as s:
                 states = [declare(i) for i in range(k)]
                 s.add_assertion(init(states[0], initial))
-    
+
                 for i in range(k - 1):
                     s.add_assertion(trans(states[i], states[i + 1]))
-        
+
                 s.add_assertion(Or([Not(inv(st)) for st in states]))
-    
+
                 if s.solve():
                     print(f"Falso. Contra-exemplo no caso base, k = {k}")
                     model = s.get_model()
@@ -343,17 +347,17 @@ def _(BVAdd, BVMul, Equals, Not, Or, Solver, declare, init, trans):
                         z_val = model.get_value(st['z']).constant_value()
                         print(f"Estado {i:>3} : pc = {pc_val:>1}, x = {x_val:>{w}}, y = {y_val:>{w}}, z = {z_val:>{w}}")
                     return False
-        
+
             with Solver(name="z3") as s:
-    
+
                 states = [declare(i) for i in range(k + 1)]
-    
+
                 for i in range(k):
                     s.add_assertion(trans(states[i], states[i + 1]))
                     s.add_assertion(inv(states[i]))
-    
+
                 s.add_assertion(Not(inv(states[-1])))
-    
+
                 if not s.solve():
                     print(f"Provado com k = {k}")
                     return True
@@ -365,21 +369,48 @@ def _(BVAdd, BVMul, Equals, Not, Or, Solver, declare, init, trans):
     def inv(state):
         return Equals(BVAdd(BVMul(state['x'], state['y']), state['z']), BVMul(state['a'], state['b']))
 
+    return inv, k_inducao
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Teste
+    """)
+    return
+
+
+@app.cell
+def _(inv, k_inducao):
     k_inducao(inv,10)
-    return (k_inducao,)
+    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     ## Parte c
+    $k$-indução com a condição $a < 2^{n/2} \land b < 2^{n/2}$ da propriedade NotEquals(state['pc'], Int(5))
+
+    ## Teste para mostrar a inseguraça do programa antes da restrição.
     """)
     return
 
 
 @app.cell
-def _(k_inducao, noterror):
+def _(Int, NotEquals, k_inducao):
+    def noterror(state):
+        return NotEquals(state['pc'], Int(5))
+
     k_inducao(noterror,10)
+    return (noterror,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Função init com a condição $a < 2^{n/2} \land b < 2^{n/2}$
+    """)
     return
 
 
@@ -421,26 +452,26 @@ def _(Not, Or, Solver, declare, init2, trans):
             with Solver(name="z3") as s:
                 states = [declare(i) for i in range(k)]
                 s.add_assertion(init2(states[0], initial))
-    
+
                 for i in range(k - 1):
                     s.add_assertion(trans(states[i], states[i + 1]))
-        
+
                 s.add_assertion(Or([Not(inv(st)) for st in states]))
-    
+
                 if s.solve():
                     print(f"Falso. Contra-exemplo no caso base, k = {k}")
                     return False
-        
+
             with Solver(name="z3") as s:
-    
+
                 states = [declare(i) for i in range(k + 1)]
-    
+
                 for i in range(k):
                     s.add_assertion(trans(states[i], states[i + 1]))
                     s.add_assertion(inv(states[i]))
-    
+
                 s.add_assertion(Not(inv(states[-1])))
-    
+
                 if not s.solve():
                     print(f"Provado com k = {k}")
                     return True
@@ -451,20 +482,25 @@ def _(Not, Or, Solver, declare, init2, trans):
     return (k_inducao2,)
 
 
-@app.cell
-def _(Int, NotEquals, k_inducao2):
-    def noterror(state):
-        return NotEquals(state['pc'], Int(5))
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Teste com a condição
+    """)
+    return
 
+
+@app.cell
+def _(k_inducao2, noterror):
     k_inducao2(noterror, 100)
-    return (noterror,)
+    return
 
 
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ## parte d
-    Quer-se provar que o algoritmo termina e termina corretamente usando verificação em traços infinitos; nomeadamente usando indução. Formalmente queremos provar que existe um estado onde se verifica $$\;(z=0)\;$$; isto é, temos de provar que se verifica uma propriedade de animação $$\;\mathsf{F}\,(z=0)$$.
+    ## Parte d
+    Quer-se provar que o algoritmo termina e termina corretamente usando verificação em traços infinitos; nomeadamente usando indução. Formalmente queremos provar que existe um estado onde se verifica $\;(z=0)\;$; isto é, temos de provar que se verifica uma propriedade de animação $\;\mathsf{F}\,(z=0)$.
     """)
     return
 
@@ -474,10 +510,10 @@ def _(And, Not, Or, Solver, declare, init, trans):
     def bmc_eventually(prop,bound, initial=None):
         for k in range(1,bound+1):
              with Solver(name="z3") as s:
-        
+
                 # completar
                 states = [declare(i) for i in range(k)]
-                    
+
                 constraints = []
 
                 constraints.append(init(states[0], initial))
@@ -516,12 +552,33 @@ def _(And, Not, Or, Solver, declare, init, trans):
     return (bmc_eventually,)
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Teste
+    """)
+    return
+
+
 @app.cell
 def _(Or, bmc_eventually, error, stop):
     def prop(state):
         return Or(stop(state), error(state))
 
     bmc_eventually(prop, 50)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Uso de LLM
+    Neste trabalho, usamos o Claude como apoio neste trabalho. Em
+    concreto:
+    * Explicação de funções relacinais para BitVecs, com e sem sinal;
+    * Debug de código: BV(1,N) trocado com Int(1), índices e chaves erradas em listas e dicionários, k-indução(parte b), função gera_traco, etc;
+    * Explicação do push e pop do solver e modificação função gera_traco com push e pop.
+    """)
     return
 
 

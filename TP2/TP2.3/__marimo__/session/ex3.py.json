@@ -20,6 +20,19 @@
     },
     {
       "id": "MJUe",
+      "code_hash": "0192cb52389131f6b12b570ed6a622a9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"variaveis-globais\">Vari\u00e1veis globais</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
       "code_hash": "2ac7578e926376e1e3e36b75e149eb99",
       "outputs": [
         {
@@ -32,20 +45,20 @@
       "console": []
     },
     {
-      "id": "vblA",
-      "code_hash": "f5797f44bd188669c76d7740d1d3dcbb",
+      "id": "bkHC",
+      "code_hash": "593ae463714e92b5fb180be48d44ae99",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"problema-proposto\">Problema proposto</h2>\n<span class=\"paragraph\">Considere o problema descrito no documento +L\u00f3gica Computacional: Multiplica\u00e7\u00e3o de Inteiros . Nesse documento usa-se um \u201cControl Flow Automaton\u201d como  modelo do programa imperativo que calcula a multiplica\u00e7\u00e3o de  inteiros positivos representados por vetores de bits.</span>\n<div class=\"language-mysql highlight\"><pre><span></span><code><span class=\"n\">a</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Construir</span><span class=\"w\"> </span><span class=\"n\">um</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">usando</span><span class=\"w\"> </span><span class=\"n\">BitVec\u2019s</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">tamanho</span><span class=\"w\"> </span><span class=\"n\">$$n$$</span><span class=\"w\"> </span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">descreva</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">comportamento</span><span class=\"w\"> </span><span class=\"n\">deste</span><span class=\"w\"> </span><span class=\"n\">aut\u00f3mato</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">para</span><span class=\"w\"> </span><span class=\"n\">isso</span><span class=\"w\"> </span><span class=\"n\">identifique</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">codifique</span><span class=\"w\"> </span><span class=\"n\">em</span><span class=\"w\"> </span><span class=\"n n-Quoted\">`Z3`</span><span class=\"w\"> </span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"k\">as</span><span class=\"w\"> </span><span class=\"n\">vari\u00e1veis</span><span class=\"w\"> </span><span class=\"k\">do</span><span class=\"w\"> </span><span class=\"n\">modelo</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">inicial</span><span class=\"w\"> </span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">rela\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">transi\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">erro</span><span class=\"p\">.</span>\n<span class=\"n\">b</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Usando</span><span class=\"w\"> </span><span class=\"n\">$$k$$</span><span class=\"o\">-</span><span class=\"n\">indu\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">verifique</span><span class=\"w\"> </span><span class=\"n\">nesse</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"w\"> </span><span class=\"n\">se</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">;</span><span class=\"n\">$$a</span><span class=\"w\"> </span><span class=\"n\">propriedade</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">;(</span><span class=\"n\">x</span><span class=\"o\">*</span><span class=\"n\">y</span><span class=\"w\"> </span><span class=\"o\">+</span><span class=\"w\"> </span><span class=\"n\">z</span><span class=\"w\"> </span><span class=\"o\">=</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"o\">*</span><span class=\"n\">b</span><span class=\"p\">)</span><span class=\"err\">\\</span><span class=\"p\">;</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">;</span><span class=\"n\">$$\u00e9</span><span class=\"w\"> </span><span class=\"n\">um</span><span class=\"w\"> </span><span class=\"n\">invariante</span><span class=\"w\"> </span><span class=\"k\">do</span><span class=\"w\"> </span><span class=\"n\">seu</span><span class=\"w\"> </span><span class=\"n\">comportamento</span><span class=\"p\">.</span>\n<span class=\"n\">c</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Usando</span><span class=\"w\"> </span><span class=\"n\">$$k$$</span><span class=\"o\">-</span><span class=\"n\">indu\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"k\">no</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"w\"> </span><span class=\"n\">acima</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">adicionando</span><span class=\"w\"> </span><span class=\"n\">ao</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">inicial</span><span class=\"w\">  </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">condi\u00e7\u00e3o</span><span class=\"w\">  </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,(</span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"o\">&lt;</span><span class=\"w\"> </span><span class=\"mi\">2</span><span class=\"o\">^</span><span class=\"err\">{</span><span class=\"n\">n</span><span class=\"o\">/</span><span class=\"mi\">2</span><span class=\"err\">}</span><span class=\"p\">)</span><span class=\"err\">\\</span><span class=\"n\">land</span><span class=\"p\">(</span><span class=\"n\">b</span><span class=\"w\"> </span><span class=\"o\">&lt;</span><span class=\"w\"> </span><span class=\"mi\">2</span><span class=\"o\">^</span><span class=\"err\">{</span><span class=\"n\">n</span><span class=\"o\">/</span><span class=\"mi\">2</span><span class=\"err\">}</span><span class=\"p\">)</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">verifique</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">seguran\u00e7a</span><span class=\"w\"> </span><span class=\"k\">do</span><span class=\"w\"> </span><span class=\"n\">programa</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">nomeadamente</span><span class=\"w\">  </span><span class=\"n\">prove</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">com</span><span class=\"w\"> </span><span class=\"n\">tal</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">inicial</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">estado</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">erro</span><span class=\"w\"> </span><span class=\"n\">nunca</span><span class=\"w\"> </span><span class=\"n\">\u00e9</span><span class=\"w\"> </span><span class=\"n\">acess\u00edvel</span><span class=\"p\">.</span>\n<span class=\"n\">d</span><span class=\"p\">.</span><span class=\"w\"> </span><span class=\"n\">Codifique</span><span class=\"w\"> </span><span class=\"n\">a</span><span class=\"w\"> </span><span class=\"n\">propriedade</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">anima\u00e7\u00e3o</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">exprime</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">o</span><span class=\"w\"> </span><span class=\"n\">programa</span><span class=\"w\"> </span><span class=\"n\">termina</span><span class=\"w\"> </span><span class=\"n\">quaisquer</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">sejam</span><span class=\"w\"> </span><span class=\"n\">os</span><span class=\"w\"> </span><span class=\"n\">valores</span><span class=\"w\"> </span><span class=\"n\">iniciais</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">a</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">$$</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">b</span><span class=\"err\">\\</span><span class=\"p\">,</span><span class=\"n\">$$</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"w\"> </span><span class=\"n\">prove</span><span class=\"w\"> </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">ela</span><span class=\"w\"> </span><span class=\"n\">se</span><span class=\"w\"> </span><span class=\"n\">verifica</span><span class=\"w\"> </span><span class=\"k\">no</span><span class=\"w\"> </span><span class=\"n\">SFOTS</span><span class=\"w\">  </span><span class=\"n\">que</span><span class=\"w\"> </span><span class=\"n\">construiu</span><span class=\"p\">.</span>\n</code></pre></div></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"exercicio-3\">Exerc\u00edcio 3</h2>\n<span class=\"paragraph\">Considere o problema descrito no documento <a href=\"https://www.dropbox.com/scl/fi/zozzuriwaw7db9abpewyh/Logica-Computacional-Multiplicacao-de-Inteiros.paper?rlkey=j92tgvb8emq3ybb0aiv8jz33q&amp;dl=0\" rel=\"noopener noreferrer\" target=\"_blank\">+L\u00f3gica Computacional: Multiplica\u00e7\u00e3o de Inteiros</a> . Nesse documento usa-se um \u201cControl Flow Automaton\u201d como  modelo do programa imperativo que calcula a multiplica\u00e7\u00e3o de  inteiros positivos representados por vetores de bits.</span>\n<span class=\"paragraph\"><img alt=\"image\" src=\"public/p.png\" /></span>\n<ul>\n<li>a.  Construir um SFOTS, usando BitVec\u2019s de tamanho <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex> , que descreva o comportamento deste aut\u00f3mato; para isso identifique e codifique em <code>Z3</code> , as vari\u00e1veis do modelo, o estado inicial , a rela\u00e7\u00e3o de transi\u00e7\u00e3o e o estado de erro.</li>\n<li>b. Usando <marimo-tex class=\"arithmatex\">||(k||)</marimo-tex>-indu\u00e7\u00e3o verifique nesse SFOTS se a propriedade <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex> \u00e9 um invariante do seu comportamento.</li>\n<li>c. Usando <marimo-tex class=\"arithmatex\">||(k||)</marimo-tex>-indu\u00e7\u00e3o no SFOTS acima e adicionando ao estado inicial  a condi\u00e7\u00e3o  <marimo-tex class=\"arithmatex\">||(a &lt; 2^{n/2} \\land b &lt; 2^{n/2}||)</marimo-tex>, verifique a seguran\u00e7a do programa; nomeadamente  prove que, com tal estado inicial, o estado de erro nunca \u00e9 acess\u00edvel.</li>\n<li>d. Codifique a propriedade de anima\u00e7\u00e3o que exprime que o programa termina quaisquer que sejam os valores iniciais de <marimo-tex class=\"arithmatex\">||(a||)</marimo-tex> e <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> e prove que ela se verifica no SFOTS  que construiu.</li>\n</ul></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "bkHC",
+      "id": "lEQa",
       "code_hash": "16c535a89d55390e286f60ed3faa3b83",
       "outputs": [
         {
@@ -58,26 +71,13 @@
       "console": []
     },
     {
-      "id": "lEQa",
-      "code_hash": "9e3e54f69227624abd568e010cba0671",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-a\">Parte a</h1>\n<h2 id=\"construcao-do-sfots\">Constru\u00e7\u00e3o do SFOTS</h2></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "PKri",
-      "code_hash": "b852d5b3f918f903c23717e86b19319a",
+      "code_hash": "c4b76cc80e94ce4554b4165d99bf600a",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"declaracao-de-estados\">Declara\u00e7\u00e3o de estados</h2></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-a\">Parte a</h1>\n<h2 id=\"construcao-do-sfots\">Constru\u00e7\u00e3o do SFOTS</h2>\n<span class=\"paragraph\">Come\u00e7amos pela declara\u00e7\u00e3o dos estados e a inicializa\u00e7\u00e3o do primeiro estado, de acordo com as regras indicadas no in\u00edcio do programa.</span></span>"
           }
         }
       ],
@@ -163,7 +163,7 @@
     },
     {
       "id": "Hstk",
-      "code_hash": "9d6a80ccc86cfdd77a9a2a98e92fabe3",
+      "code_hash": "397236050e671306bc01cfd19afb6af2",
       "outputs": [
         {
           "type": "data",
@@ -176,19 +176,19 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Estado   0 : pc = 0, x = 2, y = 1, z = 0\nEstado   1 : pc = 1, x = 2, y = 1, z = 0\nEstado   2 : pc = 3, x = 2, y = 1, z = 0\nEstado   3 : pc = 0, x = 2, y = 0, z = 2\nEstado   4 : pc = 4, x = 2, y = 0, z = 2\n",
+          "text": "Estado   0 : pc = 0, x =  2, y = 25, z =  0\nEstado   1 : pc = 1, x =  2, y = 25, z =  0\nEstado   2 : pc = 3, x =  2, y = 25, z =  0\nEstado   3 : pc = 0, x =  2, y = 24, z =  2\nEstado   4 : pc = 1, x =  2, y = 24, z =  2\nEstado   5 : pc = 2, x =  2, y = 24, z =  2\nEstado   6 : pc = 0, x =  4, y = 12, z =  2\nEstado   7 : pc = 1, x =  4, y = 12, z =  2\nEstado   8 : pc = 2, x =  4, y = 12, z =  2\nEstado   9 : pc = 0, x =  8, y =  6, z =  2\nEstado  10 : pc = 1, x =  8, y =  6, z =  2\nEstado  11 : pc = 2, x =  8, y =  6, z =  2\nEstado  12 : pc = 0, x = 16, y =  3, z =  2\nEstado  13 : pc = 1, x = 16, y =  3, z =  2\nEstado  14 : pc = 3, x = 16, y =  3, z =  2\nEstado  15 : pc = 0, x = 16, y =  2, z = 18\nEstado  16 : pc = 1, x = 16, y =  2, z = 18\nEstado  17 : pc = 2, x = 16, y =  2, z = 18\nEstado  18 : pc = 0, x = 32, y =  1, z = 18\nEstado  19 : pc = 1, x = 32, y =  1, z = 18\nEstado  20 : pc = 3, x = 32, y =  1, z = 18\nEstado  21 : pc = 0, x = 32, y =  0, z = 50\nEstado  22 : pc = 4, x = 32, y =  0, z = 50\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
       "id": "nWHF",
-      "code_hash": "b4d9dac639fe986a8158fc64cd520190",
+      "code_hash": "9c9c3305c4ccf564eb3d413fda7cc703",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-b\">Parte b</h1>\n<h2 id=\"inducao-x-times-y-z-a-times-b\">Indu\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex></h2>\n<h2 id=\"0-inducao\">0-Indu\u00e7\u00e3o</h2>\n<blockquote>\n<span class=\"paragraph\">Para todo o estado $<marimo-tex class=\"arithmatex\">||(\\,x\\,||)</marimo-tex>$\n       (a) $<marimo-tex class=\"arithmatex\">||(\\quad \\neg\\,P(x)\\quad||)</marimo-tex>$  \u00e9  inconsistente</span>\n</blockquote>\n<span class=\"paragraph\">$<marimo-tex class=\"arithmatex\">||(1||)</marimo-tex>$-Indu\u00e7\u00e3o</span>\n<blockquote>\n<span class=\"paragraph\">Para todo par de estados $<marimo-tex class=\"arithmatex\">||(\\,x,y\\,||)</marimo-tex>$ deve-se verificar\n       (a) $<marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{init}(x)\\,\\land\\,\\neg P(x)\\quad||)</marimo-tex>$  \u00e9  inconsistente\n       (b) $<marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{trans}(x,y) \\,\\land\\, P(x)\\,\\land\\,\\neg\\,P(y)\\quad||)</marimo-tex>$ \u00e9 inconsistente</span>\n</blockquote></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-b\">Parte b</h1>\n<h2 id=\"inducao-x-times-y-z-a-times-b\">Indu\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex></h2>\n<h2 id=\"0-inducao\"><marimo-tex class=\"arithmatex\">||(0||)</marimo-tex>-Indu\u00e7\u00e3o</h2>\n<blockquote>\n<span class=\"paragraph\">Para todo o estado <marimo-tex class=\"arithmatex\">||(x||)</marimo-tex></span>\n</blockquote>\n<ul>\n<li>(a) <marimo-tex class=\"arithmatex\">||(\\neg\\,P(x)||)</marimo-tex>  \u00e9  inconsistente</li>\n</ul>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(1||)</marimo-tex>-Indu\u00e7\u00e3o</span>\n<blockquote>\n<span class=\"paragraph\">Para todo par de estados <marimo-tex class=\"arithmatex\">||(x,y||)</marimo-tex> deve-se verificar:</span>\n</blockquote>\n<ul>\n<li>(a) <marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{init}(x)\\,\\land\\,\\neg P(x)\\quad||)</marimo-tex>  \u00e9  inconsistente</li>\n<li>(b) <marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{trans}(x,y) \\,\\land\\, P(x)\\,\\land\\,\\neg\\,P(y)\\quad||)</marimo-tex> \u00e9 inconsistente</li>\n</ul></span>"
           }
         }
       ],
@@ -196,12 +196,41 @@
     },
     {
       "id": "iLit",
-      "code_hash": "7fdee787b9fb07ab6beaec65361d55ca",
+      "code_hash": "36cffad31b298b1920bd8acdca7cbf73",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>True</pre>"
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "db287c9c2a605afb60df3430d481b3f0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"teste\">Teste</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "2480b667fa83bffc3390096b59cd8ba7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/vnd.marimo+mimebundle": {
+              "text/html": "<pre class='text-xs'>True</pre>",
+              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoAAAAAvCAYAAADDwQizAAADoklEQVR4Xu3dP4hcVRTA4XPfhIBFdrLB7MSggqAYdzatXZoUgqBNSKWg2PkPC5sQIRAwgiFNeklpY5HGzj6NbKGwOyOCKEjcnRDBt7GIkHlXJhrYalnI7CacfF81A29gzrnljztTAgAAAAAAgFRKqmkAAAAAAAAQgAAAAAAAALJxAwgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACCZhw5A/cHyFxHl3H97qb2IMr3/stSv2s3RB8n2BQAAAAAA8Nh76AC0XX+wfLfr3Xv2zh8/337sJwcAAAAAAEhqzwPQwmD5kxJxsUS815VyptR4PaJeayej8wuD4dUmut/+moyvzvbbHwxXoynvtxtrq7P3h5dWztTSXYkaB6PUr9vJ+PzsmlHSswAAAAAAAJiLPQ9AM/3B8FLUOBtNvRC19iOap9vJ+pc7BaD+4OUXSvRu1Nqcao/W3/u3u2+jlGvt5uibuUwOAAAAAACQ1P4FoIhX28n6awtHX3mpO9A78PfG2ninAHR4afhpbeLFdnP9w9nu+8eGZ2vEm1ub6+8mPQsAAAAAAIC52LcAVGv8s3Vr/fPt33rHG0BLw8tR6jsRMfn/Mwcj6g/tZPzWXCYHAAAAAABIav8CUHR3tybjS9v3uFMAuv/fQaWceHADCAAAAAAAgN15tAFoaXihlPpUOxl9tjg4cbKL5kY0zel2Y231yPGV56bT7vtp05ye/Vzc4jPLp+413ejOzZ/+3N1oAAAAAAAAT6Y9D0ALx4Yfl1ovRkSNiO/ayejtB6tePD58vpvG9Rr1ZkT5tUQ9GU1zbhaAZs8cGqy80Yvuco04EiV+jK75qL219suTeVQAAAAAAAC7M9cABAAAAAAAwKMnAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACTzL6sbDD9d+IzhAAAAEGRlQkdCM0ZEMTgxMTQ0NEZFNzc1tAssZAAAAABJRU5ErkJggg=="
+            }
           }
         }
       ],
@@ -215,26 +244,29 @@
       ]
     },
     {
-      "id": "ZHCJ",
-      "code_hash": "4030dadb118424136eb3b9c9094c67df",
+      "id": "qnkX",
+      "code_hash": "45f5dae6aea2513c06509e110505b25c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-c\">Parte c</h2></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-c\">Parte c</h2>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(k||)</marimo-tex>-indu\u00e7\u00e3o com a condi\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(a &lt; 2^{n/2} \\land b &lt; 2^{n/2}||)</marimo-tex> da propriedade NotEquals(state['pc'], Int(5))</span>\n<h2 id=\"teste-para-mostrar-a-inseguraca-do-programa-antes-da-restricao\">Teste para mostrar a insegura\u00e7a do programa antes da restri\u00e7\u00e3o.</h2></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ROlb",
-      "code_hash": "0540dcb828a509f1c2a02c9da0d09627",
+      "id": "TqIu",
+      "code_hash": "db80ec2dde72d01dd2bf2317a8665924",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>False</pre>"
+            "application/vnd.marimo+mimebundle": {
+              "text/html": "<pre class='text-xs'>False</pre>",
+              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoAAAAAvCAYAAADDwQizAAAEjUlEQVR4Xu3dS2hcVRjA8e9MmiyM7UyDySS1rQqibSaKqOCqIHWrWMSV+MCNoKWKUheCG3ElPrYufICIIkIXoruCiC+kq1YyiYW6stZMU0snbW2JmXsk4lA3rQoTtMffb3ngDud8Z/nnzk0BAAAAAABAUVJRpwEAAAAAAEAAAgAAAAAAKI03gAAAAAAAAAojAAEAAAAAABRGAAIAAAAAACiMAAQAAAAAAFAYAQgAAAAAAKAwAhAAAAAAAEBhBCAAAAAAAIDCCEAAAAAAAACFEYAAAAAAAAAKIwABAAAAAAAURgACAAAAAAAojAAEAAAAAABQGAEIAAAAAACgMAIQAAAAAABAYQQgAAAAAACAwvx7AajVGqmfyHMRMRSRhrud9ubCZgsAAAAAAPCvGEgA2jAx/WBK8XZE+uXCKaq93c78m391qrGrb97cW+l9IwABAAAAAAAMxuACUC12dRfm7v+n2xKAAAAAAAAABmvNA1BjcubOnKvXI2IsRyzmXHvs9PHZr/vHuFQAajRbL+bID0VELUccXDdU233y2OwPq882Jmbuy6l6OXKMRMrvdTvzz0VEHux4AAAAAAAALj9rHoDqW2/a2Fs+t+7MwpHFxuT0ozliT3dh7tb+qC4WgOpT226LqrZv/fDS9qNHj56rN1s7R6o4sLjYPlNv3nhdiqGvcq7t6I7nH+onqo8jpbe6C3MfXn5XAAAAAAAAMFiDC0ApVr/3c+r37aU49ufI0zc63ppcV8vz3c7cxv7axQJQY2r7NbmqHYqIZ4d7Kx+cOHH4dP+ZxkTrmVyL67sL7SdW1+qTrftzxD1LC+1HBjseAAAAAACAy8/gAtBFvgHUmNx2bRVDL6RcbU0RIzlqrW6n3eiP6lJ/AVefmrk9VdVTEXFXROw71Zl4OuKzlfpE66VI+eGI6PzxOyMR+WC3M//A5XcFAAAAAAAAg7X2Aag5/WWO9E63035j/aYbrqr1ho/83QDUNz7eunK5lr/IOb+2dHz+3Q3N6SdTStv6bwABAAAAAABwwZoHoPrk9OHI6fFup/1pozl9b474oNuZG42IanUbzebNo+dj5djQr8tbhoev6HU6355dXW+Mt27JKU10j8/uHx9vjS4P5c9zTq8sddrvj22a2dLrVQd6tdrOMz/Nzm+cmt6xUqvmTv/43c8uFwAAAAAA+L9b8wDUmNi+K6f0ckScjEj7V5tPivzJqc7cR/3hb2hufz5F2hMR51eqdMfZxfbC2OR0qxfxalTRihQ5R9q31GnvjYje6nPrmzN3D0X1Uo4YixSHoqrt7h6f/f7/fqEAAAAAAAADCUAAAAAAAAD8dwhAAAAAAAAAhRGAAAAAAAAACiMAAQAAAAAAFEYAAgAAAAAAKIwABAAAAAAAUBgBCAAAAAAAoDACEAAAAAAAQGEEIAAAAAAAgMIIQAAAAAAAAIURgAAAAAAAAAojAAEAAAAAABRGAAIAAAAAACiMAAQAAAAAAFAYAQgAAAAAAKAwAhAAAAAAAEBhBCAAAAAAAIDCCEAAAAAAAACFEYAAAAAAAAAK8xs1R0c/ZwJE3wAAABBkZUJHMTc2RjhBMDlBNjUyOTc3MZyTF2kAAAAASUVORK5CYII="
+            }
           }
         }
       ],
@@ -242,13 +274,26 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Falso. Contra-exemplo no caso base, k = 4\nEstado   0 : pc = 0, x = 254, y = 128, z =   0\nEstado   1 : pc = 1, x = 254, y = 128, z =   0\nEstado   2 : pc = 2, x = 254, y = 128, z =   0\nEstado   3 : pc = 5, x = 254, y = 128, z =   0\n",
+          "text": "Falso. Contra-exemplo no caso base, k = 4\nEstado   0 : pc = 0, x = 129, y =   8, z =   0\nEstado   1 : pc = 1, x = 129, y =   8, z =   0\nEstado   2 : pc = 2, x = 129, y =   8, z =   0\nEstado   3 : pc = 5, x = 129, y =   8, z =   0\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "qnkX",
+      "id": "Vxnm",
+      "code_hash": "50a36aadc66cf7f6319a5dbeca23fc94",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"funcao-init-com-a-condicao-a-2n2-land-b-2n2\">Fun\u00e7\u00e3o init com a condi\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(a &lt; 2^{n/2} \\land b &lt; 2^{n/2}||)</marimo-tex></h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
       "code_hash": "d1d8ae22c8527c03526f74e337749d6b",
       "outputs": [
         {
@@ -261,8 +306,8 @@
       "console": []
     },
     {
-      "id": "TqIu",
-      "code_hash": "ee45705a823faced859507153f0543ee",
+      "id": "ulZA",
+      "code_hash": "cfd9f2b59a91d323cffa25ee630b5849",
       "outputs": [
         {
           "type": "data",
@@ -274,13 +319,29 @@
       "console": []
     },
     {
-      "id": "Vxnm",
-      "code_hash": "d69325d4fbfd73875316c137ef6aa6df",
+      "id": "ecfG",
+      "code_hash": "068f281152c31c278ec6e7b84b0d7d66",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>True</pre>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"teste-com-a-condicao\">Teste com a condi\u00e7\u00e3o</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "aafc3a38bb2e4eb70d1ed259a7fc34c6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/vnd.marimo+mimebundle": {
+              "text/html": "<pre class='text-xs'>True</pre>",
+              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoAAAAAvCAYAAADDwQizAAADoklEQVR4Xu3dP4hcVRTA4XPfhIBFdrLB7MSggqAYdzatXZoUgqBNSKWg2PkPC5sQIRAwgiFNeklpY5HGzj6NbKGwOyOCKEjcnRDBt7GIkHlXJhrYalnI7CacfF81A29gzrnljztTAgAAAAAAgFRKqmkAAAAAAAAQgAAAAAAAALJxAwgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACCZhw5A/cHyFxHl3H97qb2IMr3/stSv2s3RB8n2BQAAAAAA8Nh76AC0XX+wfLfr3Xv2zh8/337sJwcAAAAAAEhqzwPQwmD5kxJxsUS815VyptR4PaJeayej8wuD4dUmut/+moyvzvbbHwxXoynvtxtrq7P3h5dWztTSXYkaB6PUr9vJ+PzsmlHSswAAAAAAAJiLPQ9AM/3B8FLUOBtNvRC19iOap9vJ+pc7BaD+4OUXSvRu1Nqcao/W3/u3u2+jlGvt5uibuUwOAAAAAACQ1P4FoIhX28n6awtHX3mpO9A78PfG2ninAHR4afhpbeLFdnP9w9nu+8eGZ2vEm1ub6+8mPQsAAAAAAIC52LcAVGv8s3Vr/fPt33rHG0BLw8tR6jsRMfn/Mwcj6g/tZPzWXCYHAAAAAABIav8CUHR3tybjS9v3uFMAuv/fQaWceHADCAAAAAAAgN15tAFoaXihlPpUOxl9tjg4cbKL5kY0zel2Y231yPGV56bT7vtp05ye/Vzc4jPLp+413ejOzZ/+3N1oAAAAAAAAT6Y9D0ALx4Yfl1ovRkSNiO/ayejtB6tePD58vpvG9Rr1ZkT5tUQ9GU1zbhaAZs8cGqy80Yvuco04EiV+jK75qL219suTeVQAAAAAAAC7M9cABAAAAAAAwKMnAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACTzL6sbDD9d+IzhAAAAEGRlQkdCM0ZEMTgxMTQ0NEZFNzc1tAssZAAAAABJRU5ErkJggg=="
+            }
           }
         }
       ],
@@ -294,21 +355,21 @@
       ]
     },
     {
-      "id": "DnEU",
-      "code_hash": "82952c6d325826de95ca6d8e00840455",
+      "id": "ZBYS",
+      "code_hash": "8d64ef6f320d05788e225bbda51f18c1",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-d\">parte d</h2>\n<span class=\"paragraph\">Quer-se provar que o algoritmo termina e termina corretamente usando verifica\u00e7\u00e3o em tra\u00e7os infinitos; nomeadamente usando indu\u00e7\u00e3o. Formalmente queremos provar que existe um estado onde se verifica $<marimo-tex class=\"arithmatex\">||(\\;(z=0)\\;||)</marimo-tex>$; isto \u00e9, temos de provar que se verifica uma propriedade de anima\u00e7\u00e3o $<marimo-tex class=\"arithmatex\">||(\\;\\mathsf{F}\\,(z=0)||)</marimo-tex>$.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-d\">Parte d</h2>\n<span class=\"paragraph\">Quer-se provar que o algoritmo termina e termina corretamente usando verifica\u00e7\u00e3o em tra\u00e7os infinitos; nomeadamente usando indu\u00e7\u00e3o. Formalmente queremos provar que existe um estado onde se verifica <marimo-tex class=\"arithmatex\">||(\\;(z=0)\\;||)</marimo-tex>; isto \u00e9, temos de provar que se verifica uma propriedade de anima\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(\\;\\mathsf{F}\\,(z=0)||)</marimo-tex>.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ulZA",
-      "code_hash": "0aa1486bc686b3ffbc866d3afdb60aa7",
+      "id": "aLJB",
+      "code_hash": "a6f3f9002efcdd4638743595aba94354",
       "outputs": [
         {
           "type": "data",
@@ -320,7 +381,20 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "nHfw",
+      "code_hash": "7b2f7d5d451a8f2a9ad5e694a125948b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"teste\">Teste</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
       "code_hash": "85bb205b93e1f84cfc632caf85cc9f65",
       "outputs": [
         {
@@ -338,6 +412,19 @@
           "mimetype": "text/plain"
         }
       ]
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "cee35116a8d4c8d6e541dffff36f3027",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"uso-de-llm\">Uso de LLM</h2>\n<span class=\"paragraph\">Neste trabalho, usamos o Claude como apoio neste trabalho. Em\nconcreto:</span>\n<ul>\n<li>Explica\u00e7\u00e3o de fun\u00e7\u00f5es relacinais para BitVecs, com e sem sinal;</li>\n<li>Debug de c\u00f3digo: BV(1,N) trocado com Int(1), \u00edndices e chaves erradas em listas e dicion\u00e1rios, k-indu\u00e7\u00e3o(parte b), fun\u00e7\u00e3o gera_traco, etc;</li>\n<li>Explica\u00e7\u00e3o do push e pop do solver e modifica\u00e7\u00e3o fun\u00e7\u00e3o gera_traco com push e pop.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
     }
   ]
 }
