@@ -1,0 +1,17 @@
+[project]
+name = "trabalho"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo",
+    "matplotlib==3.11.2",
+    "numpy==2.5.4",
+    "z3-solver==5.3.2.0",
+]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "tests"]
+testpaths = ["tests"]
