@@ -7,7 +7,7 @@
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "eecd29e6d06a916f3211b94456b82e4d",
+      "code_hash": "15fa377aa6f41ee29552763f0e57a365",
       "outputs": [
         {
           "type": "data",
@@ -33,7 +33,7 @@
     },
     {
       "id": "vblA",
-      "code_hash": "2ac7578e926376e1e3e36b75e149eb99",
+      "code_hash": "1949fbeab29009b9ff55ac9ed1bbdfe8",
       "outputs": [
         {
           "type": "data",
@@ -137,7 +137,7 @@
     },
     {
       "id": "Kclp",
-      "code_hash": "86b0505951cbbdddbcb2a51e9f63314f",
+      "code_hash": "b6a880cb9ae6750845141d4ddca92ecf",
       "outputs": [
         {
           "type": "data",
@@ -163,7 +163,7 @@
     },
     {
       "id": "Hstk",
-      "code_hash": "397236050e671306bc01cfd19afb6af2",
+      "code_hash": "19905e8d44c0d6bc76b74b68cfc094f0",
       "outputs": [
         {
           "type": "data",
@@ -176,19 +176,19 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Estado   0 : pc = 0, x =  2, y = 25, z =  0\nEstado   1 : pc = 1, x =  2, y = 25, z =  0\nEstado   2 : pc = 3, x =  2, y = 25, z =  0\nEstado   3 : pc = 0, x =  2, y = 24, z =  2\nEstado   4 : pc = 1, x =  2, y = 24, z =  2\nEstado   5 : pc = 2, x =  2, y = 24, z =  2\nEstado   6 : pc = 0, x =  4, y = 12, z =  2\nEstado   7 : pc = 1, x =  4, y = 12, z =  2\nEstado   8 : pc = 2, x =  4, y = 12, z =  2\nEstado   9 : pc = 0, x =  8, y =  6, z =  2\nEstado  10 : pc = 1, x =  8, y =  6, z =  2\nEstado  11 : pc = 2, x =  8, y =  6, z =  2\nEstado  12 : pc = 0, x = 16, y =  3, z =  2\nEstado  13 : pc = 1, x = 16, y =  3, z =  2\nEstado  14 : pc = 3, x = 16, y =  3, z =  2\nEstado  15 : pc = 0, x = 16, y =  2, z = 18\nEstado  16 : pc = 1, x = 16, y =  2, z = 18\nEstado  17 : pc = 2, x = 16, y =  2, z = 18\nEstado  18 : pc = 0, x = 32, y =  1, z = 18\nEstado  19 : pc = 1, x = 32, y =  1, z = 18\nEstado  20 : pc = 3, x = 32, y =  1, z = 18\nEstado  21 : pc = 0, x = 32, y =  0, z = 50\nEstado  22 : pc = 4, x = 32, y =  0, z = 50\n",
+          "text": "Estado   0 : pc = 0, x = 0, y = 8, z = 0, inv = 12\nEstado   1 : pc = 1, x = 0, y = 8, z = 0, inv = 11\nEstado   2 : pc = 2, x = 0, y = 8, z = 0, inv = 10\nEstado   3 : pc = 0, x = 0, y = 4, z = 0, inv = 8\nEstado   4 : pc = 1, x = 0, y = 4, z = 0, inv = 7\nEstado   5 : pc = 2, x = 0, y = 4, z = 0, inv = 6\nEstado   6 : pc = 0, x = 0, y = 2, z = 0, inv = 6\nEstado   7 : pc = 1, x = 0, y = 2, z = 0, inv = 5\nEstado   8 : pc = 2, x = 0, y = 2, z = 0, inv = 4\nEstado   9 : pc = 0, x = 0, y = 1, z = 0, inv = 5\nEstado  10 : pc = 1, x = 0, y = 1, z = 0, inv = 4\nEstado  11 : pc = 3, x = 0, y = 1, z = 0, inv = 2\nEstado  12 : pc = 0, x = 0, y = 0, z = 0, inv = 4\nEstado  13 : pc = 4, x = 0, y = 0, z = 0, inv = 0\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
       "id": "nWHF",
-      "code_hash": "9c9c3305c4ccf564eb3d413fda7cc703",
+      "code_hash": "621c85fc30eea3ceafc0d2bf482682f9",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-b\">Parte b</h1>\n<h2 id=\"inducao-x-times-y-z-a-times-b\">Indu\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex></h2>\n<h2 id=\"0-inducao\"><marimo-tex class=\"arithmatex\">||(0||)</marimo-tex>-Indu\u00e7\u00e3o</h2>\n<blockquote>\n<span class=\"paragraph\">Para todo o estado <marimo-tex class=\"arithmatex\">||(x||)</marimo-tex></span>\n</blockquote>\n<ul>\n<li>(a) <marimo-tex class=\"arithmatex\">||(\\neg\\,P(x)||)</marimo-tex>  \u00e9  inconsistente</li>\n</ul>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(1||)</marimo-tex>-Indu\u00e7\u00e3o</span>\n<blockquote>\n<span class=\"paragraph\">Para todo par de estados <marimo-tex class=\"arithmatex\">||(x,y||)</marimo-tex> deve-se verificar:</span>\n</blockquote>\n<ul>\n<li>(a) <marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{init}(x)\\,\\land\\,\\neg P(x)\\quad||)</marimo-tex>  \u00e9  inconsistente</li>\n<li>(b) <marimo-tex class=\"arithmatex\">||(\\quad\\mathsf{trans}(x,y) \\,\\land\\, P(x)\\,\\land\\,\\neg\\,P(y)\\quad||)</marimo-tex> \u00e9 inconsistente</li>\n</ul></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"parte-b\">Parte b</h1>\n<h2 id=\"inducao-x-times-y-z-a-times-b\">Indu\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(x \\times y + z = a \\times b||)</marimo-tex></h2></span>"
           }
         }
       ],
@@ -196,7 +196,7 @@
     },
     {
       "id": "iLit",
-      "code_hash": "36cffad31b298b1920bd8acdca7cbf73",
+      "code_hash": "a6056c56126678d1d3c010da4ed7ef08",
       "outputs": [
         {
           "type": "data",
@@ -222,14 +222,14 @@
     },
     {
       "id": "ROlb",
-      "code_hash": "2480b667fa83bffc3390096b59cd8ba7",
+      "code_hash": "999c85a68ec09a98254d7f09bf5ee737",
       "outputs": [
         {
           "type": "data",
           "data": {
             "application/vnd.marimo+mimebundle": {
               "text/html": "<pre class='text-xs'>True</pre>",
-              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoAAAAAvCAYAAADDwQizAAADoklEQVR4Xu3dP4hcVRTA4XPfhIBFdrLB7MSggqAYdzatXZoUgqBNSKWg2PkPC5sQIRAwgiFNeklpY5HGzj6NbKGwOyOCKEjcnRDBt7GIkHlXJhrYalnI7CacfF81A29gzrnljztTAgAAAAAAgFRKqmkAAAAAAAAQgAAAAAAAALJxAwgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACCZhw5A/cHyFxHl3H97qb2IMr3/stSv2s3RB8n2BQAAAAAA8Nh76AC0XX+wfLfr3Xv2zh8/337sJwcAAAAAAEhqzwPQwmD5kxJxsUS815VyptR4PaJeayej8wuD4dUmut/+moyvzvbbHwxXoynvtxtrq7P3h5dWztTSXYkaB6PUr9vJ+PzsmlHSswAAAAAAAJiLPQ9AM/3B8FLUOBtNvRC19iOap9vJ+pc7BaD+4OUXSvRu1Nqcao/W3/u3u2+jlGvt5uibuUwOAAAAAACQ1P4FoIhX28n6awtHX3mpO9A78PfG2ninAHR4afhpbeLFdnP9w9nu+8eGZ2vEm1ub6+8mPQsAAAAAAIC52LcAVGv8s3Vr/fPt33rHG0BLw8tR6jsRMfn/Mwcj6g/tZPzWXCYHAAAAAABIav8CUHR3tybjS9v3uFMAuv/fQaWceHADCAAAAAAAgN15tAFoaXihlPpUOxl9tjg4cbKL5kY0zel2Y231yPGV56bT7vtp05ye/Vzc4jPLp+413ejOzZ/+3N1oAAAAAAAAT6Y9D0ALx4Yfl1ovRkSNiO/ayejtB6tePD58vpvG9Rr1ZkT5tUQ9GU1zbhaAZs8cGqy80Yvuco04EiV+jK75qL219suTeVQAAAAAAAC7M9cABAAAAAAAwKMnAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACTzL6sbDD9d+IzhAAAAEGRlQkdCM0ZEMTgxMTQ0NEZFNzc1tAssZAAAAABJRU5ErkJggg=="
+              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAADJUlEQVR4Xu3cP4hcVRTA4XPfhoCFO9lgdmJQQVCMO5vWLk0KQdAmpFJQ7PyHhU2IEAgYwWCTXlLapEhjZ59GUijszIggChKzEyL4NhYRMu/KrFnYarfI7CacfF81UwzMubf6zX1zSwAAAABplDSTAAAAAEIfAAAAMnGiDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIBGhDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIJGHDv1ef+XLiHL2/zWpCxFluvmy1G/a9dGHidYKAAAAHnsPHfrb9for97qF+8/d/fOXO4/95AAAAJDQnof+Yn/l0xJxoUS835VyutR4I6JeaSejc4v9weUmut//nowvz9a21x/ciKZ80N5auzF7f2h59XQt3ddR42CU+m07GZ+bPTaQcB8AAABgLvY89Gd6/cHFqHEmmno+au1FNM+0k+FXO4V+r//KiyUWrtfanGyP1D96d7rvopQr7fro6lwmBwAAgIT2L/QjXmsnw9cXj7z6cndg4cA/t9bGO4X+oeXBZ7WJl9r14UebPxYcHZypEW9trA/fS7gPAAAAMBf7Fvq1xr8bt4dfbP/WO57oLw8uRanvRsTkwWcORtQf28n47blMDgAAAAntX+hHd29jMr64fQ13Cv3N//aXcnzrRB8AAADY3aMN/eXB+VLqU+1k9PlS//iJLprr0TSnZpfxHT62+vx02v0wbZpTs8f8l55dOXm/6UZ3b/781+5jAQAAwJNpz0N/8ejgk1LrhQe35X/fTkbvbC310rHBC900rtWoNyPKbyXqiWias1u37j/dX31zIbpLNeJwlPgpuubj9vbar0/mVgEAAMDu5hr6AAAAwKMl9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJ/AfQQww/EZg0mgAAABBkZUJHN0IxM0U2NzRGRUQ4REY5MUnOFnsAAAAASUVORK5CYII="
             }
           }
         }
@@ -238,7 +238,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Provado com k = 2\n",
+          "text": "Falha caso indutivo k = 1\nInvariante v\u00e1lido para k = 2\n",
           "mimetype": "text/plain"
         }
       ]
@@ -258,14 +258,14 @@
     },
     {
       "id": "TqIu",
-      "code_hash": "db80ec2dde72d01dd2bf2317a8665924",
+      "code_hash": "f690bab01d730892027b26b1558925fb",
       "outputs": [
         {
           "type": "data",
           "data": {
             "application/vnd.marimo+mimebundle": {
               "text/html": "<pre class='text-xs'>False</pre>",
-              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoAAAAAvCAYAAADDwQizAAAEjUlEQVR4Xu3dS2hcVRjA8e9MmiyM7UyDySS1rQqibSaKqOCqIHWrWMSV+MCNoKWKUheCG3ElPrYufICIIkIXoruCiC+kq1YyiYW6stZMU0snbW2JmXsk4lA3rQoTtMffb3ngDud8Z/nnzk0BAAAAAABAUVJRpwEAAAAAAEAAAgAAAAAAKI03gAAAAAAAAAojAAEAAAAAABRGAAIAAAAAACiMAAQAAAAAAFAYAQgAAAAAAKAwAhAAAAAAAEBhBCAAAAAAAIDCCEAAAAAAAACFEYAAAAAAAAAKIwABAAAAAAAURgACAAAAAAAojAAEAAAAAABQGAEIAAAAAACgMAIQAAAAAABAYQQgAAAAAACAwvx7AajVGqmfyHMRMRSRhrud9ubCZgsAAAAAAPCvGEgA2jAx/WBK8XZE+uXCKaq93c78m391qrGrb97cW+l9IwABAAAAAAAMxuACUC12dRfm7v+n2xKAAAAAAAAABmvNA1BjcubOnKvXI2IsRyzmXHvs9PHZr/vHuFQAajRbL+bID0VELUccXDdU233y2OwPq882Jmbuy6l6OXKMRMrvdTvzz0VEHux4AAAAAAAALj9rHoDqW2/a2Fs+t+7MwpHFxuT0ozliT3dh7tb+qC4WgOpT226LqrZv/fDS9qNHj56rN1s7R6o4sLjYPlNv3nhdiqGvcq7t6I7nH+onqo8jpbe6C3MfXn5XAAAAAAAAMFiDC0ApVr/3c+r37aU49ufI0zc63ppcV8vz3c7cxv7axQJQY2r7NbmqHYqIZ4d7Kx+cOHH4dP+ZxkTrmVyL67sL7SdW1+qTrftzxD1LC+1HBjseAAAAAACAy8/gAtBFvgHUmNx2bRVDL6RcbU0RIzlqrW6n3eiP6lJ/AVefmrk9VdVTEXFXROw71Zl4OuKzlfpE66VI+eGI6PzxOyMR+WC3M//A5XcFAAAAAAAAg7X2Aag5/WWO9E63035j/aYbrqr1ho/83QDUNz7eunK5lr/IOb+2dHz+3Q3N6SdTStv6bwABAAAAAABwwZoHoPrk9OHI6fFup/1pozl9b474oNuZG42IanUbzebNo+dj5djQr8tbhoev6HU6355dXW+Mt27JKU10j8/uHx9vjS4P5c9zTq8sddrvj22a2dLrVQd6tdrOMz/Nzm+cmt6xUqvmTv/43c8uFwAAAAAA+L9b8wDUmNi+K6f0ckScjEj7V5tPivzJqc7cR/3hb2hufz5F2hMR51eqdMfZxfbC2OR0qxfxalTRihQ5R9q31GnvjYje6nPrmzN3D0X1Uo4YixSHoqrt7h6f/f7/fqEAAAAAAAADCUAAAAAAAAD8dwhAAAAAAAAAhRGAAAAAAAAACiMAAQAAAAAAFEYAAgAAAAAAKIwABAAAAAAAUBgBCAAAAAAAoDACEAAAAAAAQGEEIAAAAAAAgMIIQAAAAAAAAIURgAAAAAAAAAojAAEAAAAAABRGAAIAAAAAACiMAAQAAAAAAFAYAQgAAAAAAKAwAhAAAAAAAEBhBCAAAAAAAIDCCEAAAAAAAACFEYAAAAAAAAAK8xs1R0c/ZwJE3wAAABBkZUJHMTc2RjhBMDlBNjUyOTc3MZyTF2kAAAAASUVORK5CYII="
+              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAAEEUlEQVR4Xu3bTWhcVRiA4e9Mmiys7UyDyaRaq4Jok4lFVHBVEN0qFulK/MGNoKKi1IXgRlyVqlsX/oCIUoQuRHcFEf8QV61kEgu6stZMEqWTVlti5h6JOuimVXFC7fF5lgfucM53Vi93bgoAAACgGKmYkwAAAABCHwAAAErijT4AAAAUROgDAABAQYQ+AAAAFEToAwAAQEGEPgAAABRE6AMAAEBBhD4AAAAUROgDAABAQYQ+AAAAFEToAwAAQEGEPgAAABRE6AMAAEBBhD4AAAAUROgDAABAQYQ+AAAAFOT8hX6rNVJfyrMRMRSRhrud9raC5goAAADnxUBCf/P41D0pxWsR6ac/TlHt7XbmXvmrU41etnNbb7X3mdAHAACAf29woV+L3d352T3/dEtCHwAAAAZn3UO/MTF9S87VSxExmiMWc649eHJh5tP+Ec4V+o1m67kc+d6IqOWIwxuGao/8cHzmm7VnG+PTd+VU7Y8cI5Hym93O3NMRkQc3GgAAALjwrHvo17dft6W3cnrDqfmvFhsTUw/kiEe787M39Ed1ttCvb91xY1S1g5uGlyePHTt2ut5s3TpSxeeLi+1T9ea1V6UY+iTn2q7uWP6mvlS9Gym92p2fffvCuwIAAAAYnMGFfoq17/FP/Lq1FMf/HPN9G8daExtqea7bmd3SXztb6De2Tl6Rq9qRiHhquLd6YGnp6Mn+M43x1pO5Fld359sPr63VJ1p7csQdy/Pt+wc3GgAAALjwDC70z/KNfmNix5VVDD2bcrU9RYzkqLW6nXajP6pz/XW/vnX6plRVj0fEbRFx8ERn/ImID1br4619kfJ9EdH5/XdGIvLhbmfu7gvvCgAAAGBw1j/0m1Mf50ivdzvtlzddes0ltd7wV3839PvGxloXr9TyRznnF5cX5t7Y3Jx6LKW0o/9GHwAAAPjNuod+fWLqaOT0ULfTfr/RnLozRxzodmY3RkS1toFmc+fGM7F6fOjnlcuHhy/qdTpf/Li23hhrXZ9TGu8uzBwaG2ttXBnKH+acnl/utN8avXT68l6v+rxXq9166ruZuS1bp3at1qrZk99++b2LBQAA4P9s3UO/MT65O6e0PyJ+iEiH1to+RX7vRGf2nf7gNzcnn0mRHo2IM6tVuvnHxfb86MRUqxfxQlTRihQ5Rzq43GnvjYje2nObmtO3D0W1L0eMRoojUdUe6S7MfP1/vkwAAAAYSOgDAAAA/w1CHwAAAAoi9AEAAKAgQh8AAAAKIvQBAACgIEIfAAAACiL0AQAAoCBCHwAAAAoi9AEAAKAgQh8AAAAKIvQBAACgIEIfAAAACiL0AQAAoCBCHwAAAAoi9AEAAKAgQh8AAAAKIvQBAACgIEIfAAAACiL0AQAAoCC/AJAIRz+WpHigAAAAEGRlQkc0RDgwMEQwQTBFNkQyNDJFrmVzQwAAAABJRU5ErkJggg=="
             }
           }
         }
@@ -274,7 +274,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Falso. Contra-exemplo no caso base, k = 4\nEstado   0 : pc = 0, x = 129, y =   8, z =   0\nEstado   1 : pc = 1, x = 129, y =   8, z =   0\nEstado   2 : pc = 2, x = 129, y =   8, z =   0\nEstado   3 : pc = 5, x = 129, y =   8, z =   0\n",
+          "text": "Falha caso indutivo k = 1\nFalha caso indutivo k = 2\nFalha caso indutivo k = 3\nFalha caso base com k = 4\nEstado   0 : pc = 0, x = 156, y =   4, z =   0, inv = 1100\nEstado   1 : pc = 1, x = 156, y =   4, z =   0, inv = 1099\nEstado   2 : pc = 2, x = 156, y =   4, z =   0, inv = 1098\nEstado   3 : pc = 5, x = 156, y =   4, z =   0, inv = 1095\n",
           "mimetype": "text/plain"
         }
       ]
@@ -307,19 +307,6 @@
     },
     {
       "id": "ulZA",
-      "code_hash": "cfd9f2b59a91d323cffa25ee630b5849",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ecfG",
       "code_hash": "068f281152c31c278ec6e7b84b0d7d66",
       "outputs": [
         {
@@ -332,15 +319,15 @@
       "console": []
     },
     {
-      "id": "Pvdt",
-      "code_hash": "aafc3a38bb2e4eb70d1ed259a7fc34c6",
+      "id": "ecfG",
+      "code_hash": "94a93ce553b8baba042fa286315fe3eb",
       "outputs": [
         {
           "type": "data",
           "data": {
             "application/vnd.marimo+mimebundle": {
               "text/html": "<pre class='text-xs'>True</pre>",
-              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoAAAAAvCAYAAADDwQizAAADoklEQVR4Xu3dP4hcVRTA4XPfhIBFdrLB7MSggqAYdzatXZoUgqBNSKWg2PkPC5sQIRAwgiFNeklpY5HGzj6NbKGwOyOCKEjcnRDBt7GIkHlXJhrYalnI7CacfF81A29gzrnljztTAgAAAAAAgFRKqmkAAAAAAAAQgAAAAAAAALJxAwgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACAZAQgAAAAAACCZhw5A/cHyFxHl3H97qb2IMr3/stSv2s3RB8n2BQAAAAAA8Nh76AC0XX+wfLfr3Xv2zh8/337sJwcAAAAAAEhqzwPQwmD5kxJxsUS815VyptR4PaJeayej8wuD4dUmut/+moyvzvbbHwxXoynvtxtrq7P3h5dWztTSXYkaB6PUr9vJ+PzsmlHSswAAAAAAAJiLPQ9AM/3B8FLUOBtNvRC19iOap9vJ+pc7BaD+4OUXSvRu1Nqcao/W3/u3u2+jlGvt5uibuUwOAAAAAACQ1P4FoIhX28n6awtHX3mpO9A78PfG2ninAHR4afhpbeLFdnP9w9nu+8eGZ2vEm1ub6+8mPQsAAAAAAIC52LcAVGv8s3Vr/fPt33rHG0BLw8tR6jsRMfn/Mwcj6g/tZPzWXCYHAAAAAABIav8CUHR3tybjS9v3uFMAuv/fQaWceHADCAAAAAAAgN15tAFoaXihlPpUOxl9tjg4cbKL5kY0zel2Y231yPGV56bT7vtp05ye/Vzc4jPLp+413ejOzZ/+3N1oAAAAAAAAT6Y9D0ALx4Yfl1ovRkSNiO/ayejtB6tePD58vpvG9Rr1ZkT5tUQ9GU1zbhaAZs8cGqy80Yvuco04EiV+jK75qL219suTeVQAAAAAAAC7M9cABAAAAAAAwKMnAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACQjAAEAAAAAACTzL6sbDD9d+IzhAAAAEGRlQkdCM0ZEMTgxMTQ0NEZFNzc1tAssZAAAAABJRU5ErkJggg=="
+              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAADJUlEQVR4Xu3cP4hcVRTA4XPfhoCFO9lgdmJQQVCMO5vWLk0KQdAmpFJQ7PyHhU2IEAgYwWCTXlLapEhjZ59GUijszIggChKzEyL4NhYRMu/KrFnYarfI7CacfF81UwzMubf6zX1zSwAAAABplDSTAAAAAEIfAAAAMnGiDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIBGhDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIJGHDv1ef+XLiHL2/zWpCxFluvmy1G/a9dGHidYKAAAAHnsPHfrb9for97qF+8/d/fOXO4/95AAAAJDQnof+Yn/l0xJxoUS835VyutR4I6JeaSejc4v9weUmut//nowvz9a21x/ciKZ80N5auzF7f2h59XQt3ddR42CU+m07GZ+bPTaQcB8AAABgLvY89Gd6/cHFqHEmmno+au1FNM+0k+FXO4V+r//KiyUWrtfanGyP1D96d7rvopQr7fro6lwmBwAAgIT2L/QjXmsnw9cXj7z6cndg4cA/t9bGO4X+oeXBZ7WJl9r14UebPxYcHZypEW9trA/fS7gPAAAAMBf7Fvq1xr8bt4dfbP/WO57oLw8uRanvRsTkwWcORtQf28n47blMDgAAAAntX+hHd29jMr64fQ13Cv3N//aXcnzrRB8AAADY3aMN/eXB+VLqU+1k9PlS//iJLprr0TSnZpfxHT62+vx02v0wbZpTs8f8l55dOXm/6UZ3b/781+5jAQAAwJNpz0N/8ejgk1LrhQe35X/fTkbvbC310rHBC900rtWoNyPKbyXqiWias1u37j/dX31zIbpLNeJwlPgpuubj9vbar0/mVgEAAMDu5hr6AAAAwKMl9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJ/AfQQww/EZg0mgAAABBkZUJHN0IxM0U2NzRGRUQ4REY5MUnOFnsAAAAASUVORK5CYII="
             }
           }
         }
@@ -349,27 +336,27 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Provado com k = 47\n",
+          "text": "Falha caso indutivo k = 1\nFalha caso indutivo k = 2\nFalha caso indutivo k = 3\nFalha caso indutivo k = 4\nFalha caso indutivo k = 5\nFalha caso indutivo k = 6\nFalha caso indutivo k = 7\nFalha caso indutivo k = 8\nFalha caso indutivo k = 9\nFalha caso indutivo k = 10\nFalha caso indutivo k = 11\nFalha caso indutivo k = 12\nFalha caso indutivo k = 13\nFalha caso indutivo k = 14\nFalha caso indutivo k = 15\nFalha caso indutivo k = 16\nFalha caso indutivo k = 17\nFalha caso indutivo k = 18\nFalha caso indutivo k = 19\nFalha caso indutivo k = 20\nFalha caso indutivo k = 21\nFalha caso indutivo k = 22\nFalha caso indutivo k = 23\nFalha caso indutivo k = 24\nFalha caso indutivo k = 25\nFalha caso indutivo k = 26\nFalha caso indutivo k = 27\nFalha caso indutivo k = 28\nFalha caso indutivo k = 29\nFalha caso indutivo k = 30\nFalha caso indutivo k = 31\nFalha caso indutivo k = 32\nFalha caso indutivo k = 33\nFalha caso indutivo k = 34\nFalha caso indutivo k = 35\nFalha caso indutivo k = 36\nFalha caso indutivo k = 37\nFalha caso indutivo k = 38\nFalha caso indutivo k = 39\nFalha caso indutivo k = 40\nFalha caso indutivo k = 41\nFalha caso indutivo k = 42\nFalha caso indutivo k = 43\nFalha caso indutivo k = 44\nFalha caso indutivo k = 45\nFalha caso indutivo k = 46\nInvariante v\u00e1lido para k = 47\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "ZBYS",
-      "code_hash": "8d64ef6f320d05788e225bbda51f18c1",
+      "id": "Pvdt",
+      "code_hash": "d4970afe1824f36c31f460c2de52c131",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-d\">Parte d</h2>\n<span class=\"paragraph\">Quer-se provar que o algoritmo termina e termina corretamente usando verifica\u00e7\u00e3o em tra\u00e7os infinitos; nomeadamente usando indu\u00e7\u00e3o. Formalmente queremos provar que existe um estado onde se verifica <marimo-tex class=\"arithmatex\">||(\\;(z=0)\\;||)</marimo-tex>; isto \u00e9, temos de provar que se verifica uma propriedade de anima\u00e7\u00e3o <marimo-tex class=\"arithmatex\">||(\\;\\mathsf{F}\\,(z=0)||)</marimo-tex>.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parte-d\">Parte d</h2>\n<h2 id=\"propriedade-de-animacao\">Propriedade de anima\u00e7\u00e3o</h2></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "aLJB",
-      "code_hash": "a6f3f9002efcdd4638743595aba94354",
+      "id": "ZBYS",
+      "code_hash": "56e6dbce1cc7c4774eda6da956aecdde",
       "outputs": [
         {
           "type": "data",
@@ -381,7 +368,7 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "aLJB",
       "code_hash": "7b2f7d5d451a8f2a9ad5e694a125948b",
       "outputs": [
         {
@@ -394,13 +381,16 @@
       "console": []
     },
     {
-      "id": "xXTn",
-      "code_hash": "85bb205b93e1f84cfc632caf85cc9f65",
+      "id": "nHfw",
+      "code_hash": "bfd1f55f346a5feedaa37476a7df7485",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "application/vnd.marimo+mimebundle": {
+              "text/html": "<pre class='text-xs'>True</pre>",
+              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAADJUlEQVR4Xu3cP4hcVRTA4XPfhoCFO9lgdmJQQVCMO5vWLk0KQdAmpFJQ7PyHhU2IEAgYwWCTXlLapEhjZ59GUijszIggChKzEyL4NhYRMu/KrFnYarfI7CacfF81UwzMubf6zX1zSwAAAABplDSTAAAAAEIfAAAAMnGiDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIBGhDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIJGHDv1ef+XLiHL2/zWpCxFluvmy1G/a9dGHidYKAAAAHnsPHfrb9for97qF+8/d/fOXO4/95AAAAJDQnof+Yn/l0xJxoUS835VyutR4I6JeaSejc4v9weUmut//nowvz9a21x/ciKZ80N5auzF7f2h59XQt3ddR42CU+m07GZ+bPTaQcB8AAABgLvY89Gd6/cHFqHEmmno+au1FNM+0k+FXO4V+r//KiyUWrtfanGyP1D96d7rvopQr7fro6lwmBwAAgIT2L/QjXmsnw9cXj7z6cndg4cA/t9bGO4X+oeXBZ7WJl9r14UebPxYcHZypEW9trA/fS7gPAAAAMBf7Fvq1xr8bt4dfbP/WO57oLw8uRanvRsTkwWcORtQf28n47blMDgAAAAntX+hHd29jMr64fQ13Cv3N//aXcnzrRB8AAADY3aMN/eXB+VLqU+1k9PlS//iJLprr0TSnZpfxHT62+vx02v0wbZpTs8f8l55dOXm/6UZ3b/781+5jAQAAwJNpz0N/8ejgk1LrhQe35X/fTkbvbC310rHBC900rtWoNyPKbyXqiWias1u37j/dX31zIbpLNeJwlPgpuubj9vbar0/mVgEAAMDu5hr6AAAAwKMl9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJ/AfQQww/EZg0mgAAABBkZUJHN0IxM0U2NzRGRUQ4REY5MUnOFnsAAAAASUVORK5CYII="
+            }
           }
         }
       ],
@@ -408,19 +398,19 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Nenhum contra-exemplo encontrado at\u00e9 50\n",
+          "text": "Falha caso indutivo com k = 1\nProvado com k=2\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "AjVT",
-      "code_hash": "cee35116a8d4c8d6e541dffff36f3027",
+      "id": "xXTn",
+      "code_hash": "ec9d66b00cf525f3d3e7d06012964f2d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"uso-de-llm\">Uso de LLM</h2>\n<span class=\"paragraph\">Neste trabalho, usamos o Claude como apoio neste trabalho. Em\nconcreto:</span>\n<ul>\n<li>Explica\u00e7\u00e3o de fun\u00e7\u00f5es relacinais para BitVecs, com e sem sinal;</li>\n<li>Debug de c\u00f3digo: BV(1,N) trocado com Int(1), \u00edndices e chaves erradas em listas e dicion\u00e1rios, k-indu\u00e7\u00e3o(parte b), fun\u00e7\u00e3o gera_traco, etc;</li>\n<li>Explica\u00e7\u00e3o do push e pop do solver e modifica\u00e7\u00e3o fun\u00e7\u00e3o gera_traco com push e pop.</li>\n</ul></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"uso-de-llm\">Uso de LLM</h2>\n<span class=\"paragraph\">Neste trabalho, usamos o Claude como apoio neste trabalho. Em\nconcreto:</span>\n<ul>\n<li>Explica\u00e7\u00e3o de fun\u00e7\u00f5es relacinais para BitVecs, com e sem sinal;</li>\n<li>Debug de c\u00f3digo: BV(1,N) trocado com Int(1), \u00edndices e chaves erradas em listas e dicion\u00e1rios, k-indu\u00e7\u00e3o(parte b), fun\u00e7\u00e3o gera_traco, etc;</li>\n<li>Explica\u00e7\u00e3o do push e pop do solver e modifica\u00e7\u00e3o fun\u00e7\u00e3o gera_traco com push e pop.</li>\n</ul>\n<span class=\"paragraph\">Link para o chat: <a href=\"https://claude.ai/share/ffbc0723-fcc8-422f-8036-22b39d82a36d\" rel=\"noopener noreferrer\" target=\"_blank\">https://claude.ai/share/ffbc0723-fcc8-422f-8036-22b39d82a36d</a></span></span>"
           }
         }
       ],

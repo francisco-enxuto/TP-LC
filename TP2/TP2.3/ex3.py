@@ -7,7 +7,7 @@ app = marimo.App(width="full")
 @app.cell
 def _():
     import marimo as mo
-    from pysmt.shortcuts import Symbol, BV, And, Equals, get_model, Int, GE, Or, GT, BVSGT, BVSLE, BVSLT, BVSGE, Not, BVSRem, BVLShl, BVLShr, BVSub, BVAdd, Solver, BVURem, BVUGE, BVULT, BVMul, NotEquals
+    from pysmt.shortcuts import Symbol, BV, And, Equals, get_model, Int, GE, Or, GT, BVSGT, BVSLE, BVSLT, BVSGE, Not, BVSRem, BVLShl, BVLShr, BVSub, BVAdd, Solver, BVURem, BVUGE, BVULT, BVMul, NotEquals, Ite, Bool, BVUGT
     from pysmt.typing import BVType, INT
 
     return (
@@ -25,6 +25,8 @@ def _():
         BVULT,
         BVURem,
         Equals,
+        GE,
+        GT,
         INT,
         Int,
         Not,
@@ -48,7 +50,8 @@ def _(mo):
 def _():
     N = 8
     SIGNAL = False
-    return N, SIGNAL
+    pcA = {0:4, 1:3, 2:2, 3:1, 4:0, 4:0, 5:-1}
+    return N, SIGNAL, pcA
 
 
 @app.cell(hide_code=True)
@@ -239,7 +242,7 @@ def _(
             )
         )
 
-    return error, stop, trans
+    return (trans,)
 
 
 @app.cell(hide_code=True)
@@ -251,8 +254,8 @@ def _(mo):
 
 
 @app.cell
-def _(Equals, Int, Or, Solver, declare, init, trans):
-    def gera_traco(initial, kmax=300):
+def _(Equals, Int, Or, Solver, pcA):
+    def gera_traco(declare,init,trans,initial, kmax=300):
 
         with Solver(name="z3") as s:
 
@@ -268,12 +271,15 @@ def _(Equals, Int, Or, Solver, declare, init, trans):
                 if s.solve():
                     model = s.get_model()
                     w = len(str(model.get_value(states[-1]['x']).constant_value()))
+                    a_val = model.get_value(states[0]['a']).constant_value()
+                    b_val = model.get_value(states[0]['b']).constant_value()
                     for i, st in enumerate(states):
                         pc_val = model.get_value(st['pc']).constant_value()
                         x_val = model.get_value(st['x']).constant_value()
                         y_val = model.get_value(st['y']).constant_value()
                         z_val = model.get_value(st['z']).constant_value()
-                        print(f"Estado {i:>3} : pc = {pc_val:>1}, x = {x_val:>{w}}, y = {y_val:>{w}}, z = {z_val:>{w}}")
+                        inv = 2 * a_val * b_val - x_val + y_val + pcA[pc_val] - z_val
+                        print(f"Estado {i:>3} : pc = {pc_val:>1}, x = {x_val:>{w}}, y = {y_val:>{w}}, z = {z_val:>{w}}, inv = {inv:>{w}}")
                     s.pop()
                     return
 
@@ -295,9 +301,9 @@ def _(mo):
 
 
 @app.cell
-def _(BV, Int, N, gera_traco):
-    i = {'pc': Int(0), 'a' : BV(2, N), 'b' : BV(25, N)}
-    gera_traco(i)
+def _(BV, Int, N, declare, gera_traco, init, trans):
+    i = {'pc': Int(0), 'a' : BV(0, N), 'b' : BV(8, N)}
+    gera_traco(declare,init,trans,i)
     return
 
 
@@ -306,64 +312,58 @@ def _(mo):
     mo.md(r"""
     # Parte b
     ## Indução $x \times y + z = a \times b$
-
-    ## $0$-Indução
-
-    > Para todo o estado $x$
-    *        (a) $\neg\,P(x)$  é  inconsistente
-
-    $1$-Indução
-
-    > Para todo par de estados $x,y$ deve-se verificar:
-    *        (a) $\quad\mathsf{init}(x)\,\land\,\neg P(x)\quad$  é  inconsistente
-    *        (b) $\quad\mathsf{trans}(x,y) \,\land\, P(x)\,\land\,\neg\,P(y)\quad$ é inconsistente
     """)
     return
 
 
 @app.cell
-def _(BVAdd, BVMul, Equals, Not, Or, Solver, declare, init, trans):
-    def k_inducao(inv, K, initial=None):
-        w = 6
-        for k in range(1, K + 1):
-
-            with Solver(name="z3") as s:
+def _(And, BVAdd, BVMul, Equals, Not, Or, Solver, pcA):
+    def k_inducao(declare,init,trans,inv,K):
+        for k in range(1, K):
+            with Solver(name="z3") as solver:
                 states = [declare(i) for i in range(k)]
-                s.add_assertion(init(states[0], initial))
+                base = [init(states[0])]
+                for i in range(k-1):
+                    base.append(trans(states[i], states[i+1]))
 
-                for i in range(k - 1):
-                    s.add_assertion(trans(states[i], states[i + 1]))
-
-                s.add_assertion(Or([Not(inv(st)) for st in states]))
-
-                if s.solve():
-                    print(f"Falso. Contra-exemplo no caso base, k = {k}")
-                    model = s.get_model()
+                caso_base = And(And(base), Or([Not(inv(s)) for s in states]))
+                solver.add_assertion(caso_base)
+    
+                if solver.solve():
+                    print(f"Falha caso base com k = {k}")
+                    model = solver.get_model()
                     w = len(str(model.get_value(states[-1]['x']).constant_value()))
+                    a_val = model.get_value(states[0]['a']).constant_value()
+                    b_val = model.get_value(states[0]['b']).constant_value()
                     for i, st in enumerate(states):
                         pc_val = model.get_value(st['pc']).constant_value()
                         x_val = model.get_value(st['x']).constant_value()
                         y_val = model.get_value(st['y']).constant_value()
                         z_val = model.get_value(st['z']).constant_value()
-                        print(f"Estado {i:>3} : pc = {pc_val:>1}, x = {x_val:>{w}}, y = {y_val:>{w}}, z = {z_val:>{w}}")
+                        inv = 2 * a_val * b_val - x_val + y_val + pcA[pc_val] - z_val
+                        print(f"Estado {i:>3} : pc = {pc_val:>1}, x = {x_val:>{w}}, y = {y_val:>{w}}, z = {z_val:>{w}}, inv = {inv:>{w}}")
                     return False
-
-            with Solver(name="z3") as s:
-
-                states = [declare(i) for i in range(k + 1)]
-
+                solver.reset_assertions()
+                states = [declare(i) for i in range(k+1)]
+                inductive = []
                 for i in range(k):
-                    s.add_assertion(trans(states[i], states[i + 1]))
-                    s.add_assertion(inv(states[i]))
+                    inductive.append(inv(states[i]))
+                    inductive.append(trans(states[i], states[i+1]))
 
-                s.add_assertion(Not(inv(states[-1])))
+                inductive.append(Not(inv(states[k])))
+                step_case = And(inductive)
 
-                if not s.solve():
-                    print(f"Provado com k = {k}")
+                solver.add_assertion(step_case)
+    
+                if solver.solve():
+                    print(f"Falha caso indutivo k = {k}")
+
+                else:
+                    print(f"Invariante válido para k = {k}")
                     return True
 
-        print(f"Nenhum k até {K} prova a propriedade")
-        return None
+        return False
+
 
 
     def inv(state):
@@ -381,8 +381,8 @@ def _(mo):
 
 
 @app.cell
-def _(inv, k_inducao):
-    k_inducao(inv,10)
+def _(declare, init, inv, k_inducao, trans):
+    k_inducao(declare,init,trans,inv,10)
     return
 
 
@@ -398,11 +398,11 @@ def _(mo):
 
 
 @app.cell
-def _(Int, NotEquals, k_inducao):
+def _(Int, NotEquals, declare, init, k_inducao, trans):
     def noterror(state):
         return NotEquals(state['pc'], Int(5))
 
-    k_inducao(noterror,10)
+    k_inducao(declare,init,trans,noterror,10)
     return (noterror,)
 
 
@@ -443,45 +443,6 @@ def _(And, BV, BVSGE, BVSLT, BVULT, Equals, Int, N, SIGNAL):
     return (init2,)
 
 
-@app.cell
-def _(Not, Or, Solver, declare, init2, trans):
-    def k_inducao2(inv, K, initial=None):
-        w = 6
-        for k in range(1, K + 1):
-
-            with Solver(name="z3") as s:
-                states = [declare(i) for i in range(k)]
-                s.add_assertion(init2(states[0], initial))
-
-                for i in range(k - 1):
-                    s.add_assertion(trans(states[i], states[i + 1]))
-
-                s.add_assertion(Or([Not(inv(st)) for st in states]))
-
-                if s.solve():
-                    print(f"Falso. Contra-exemplo no caso base, k = {k}")
-                    return False
-
-            with Solver(name="z3") as s:
-
-                states = [declare(i) for i in range(k + 1)]
-
-                for i in range(k):
-                    s.add_assertion(trans(states[i], states[i + 1]))
-                    s.add_assertion(inv(states[i]))
-
-                s.add_assertion(Not(inv(states[-1])))
-
-                if not s.solve():
-                    print(f"Provado com k = {k}")
-                    return True
-
-        print(f"Nenhum k até {K} prova a propriedade")
-        return None
-
-    return (k_inducao2,)
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -491,8 +452,10 @@ def _(mo):
 
 
 @app.cell
-def _(k_inducao2, noterror):
-    k_inducao2(noterror, 100)
+def _(declare, init2, k_inducao, noterror, trans):
+    # k_inducao2(noterror, 100)
+
+    k_inducao(declare,init2,trans,noterror, 100)
     return
 
 
@@ -500,56 +463,44 @@ def _(k_inducao2, noterror):
 def _(mo):
     mo.md(r"""
     ## Parte d
-    Quer-se provar que o algoritmo termina e termina corretamente usando verificação em traços infinitos; nomeadamente usando indução. Formalmente queremos provar que existe um estado onde se verifica $\;(z=0)\;$; isto é, temos de provar que se verifica uma propriedade de animação $\;\mathsf{F}\,(z=0)$.
+    ## Propriedade de animação
     """)
     return
 
 
 @app.cell
-def _(And, Not, Or, Solver, declare, init, trans):
-    def bmc_eventually(prop,bound, initial=None):
-        for k in range(1,bound+1):
-             with Solver(name="z3") as s:
+def _(And, Not, Solver):
+    def animacao(declare, init, trans, P_estrela, K=10):
+        for k in range(1, K + 1):
+            s = [declare(i) for i in range(k + 2)]
 
-                # completar
-                states = [declare(i) for i in range(k)]
-
-                constraints = []
-
-                constraints.append(init(states[0], initial))
-                for i in range(k-1):
-                    constraints.append(trans(states[i], states[i+1]))
-
-                for st in states:
-                    constraints.append(Not(prop(st)))
-
-                loop = []
-
-                for j in range(k-1):
-                    loop.append(trans(states[-1],states[j]))
-
-                constraints.append(Or(loop))
-
-                s.add_assertion(And(constraints))
-
-                if s.solve():
-                    model = s.get_model()
-                    # print(model)
-                    for i, st in enumerate(states):
-                        pc_val = model.get_value(st['pc'])
-                        x_val = model.get_value(st['x'])
-                        print(f"Estado {i} : pc = {pc_val}, x = {x_val}")
-
-                    for j in range(k):
-                        if model.get_py_value(And(trans(states[-1], states[j]))):
-                            print(f"Loop de {k-1} para {j}")
-                            break
-
+            with Solver(name="z3") as solver:
+                solver.add_assertion(init(s[0]))
+                for i in range(k):
+                    solver.add_assertion(trans(s[i], s[i + 1]))
+                solver.add_assertion(Not(And([P_estrela(s[i], s[i + 1]) for i in range(k)])))
+                if solver.solve():
+                    print("Falha no caso base")
                     return False
-        print(f"Nenhum contra-exemplo encontrado até {bound}")
-        return 
 
-    return (bmc_eventually,)
+                solver.reset_assertions()
+            
+                for i in range(k):
+                    solver.add_assertion(P_estrela(s[i], s[i + 1]))
+                for i in range(k + 1):
+                    solver.add_assertion(trans(s[i], s[i + 1]))
+                solver.add_assertion(Not(P_estrela(s[k], s[k + 1])))
+                if not solver.solve():
+                    print(f"Provado com k={k}")
+                    return True
+                else:
+                    print(f"Falha caso indutivo com k = {k}")
+
+
+        print(f"Inconclusivo até {K}")
+        return None    
+
+    return (animacao,)
 
 
 @app.cell(hide_code=True)
@@ -561,11 +512,15 @@ def _(mo):
 
 
 @app.cell
-def _(Or, bmc_eventually, error, stop):
-    def prop(state):
-        return Or(stop(state), error(state))
+def _(And, BVULT, Equals, GE, GT, Int, Or, animacao, declare, init, trans):
+    def P_estrela(curr, prox):
+        y_desce   = BVULT(prox['y'], curr['y'])
+        y_igual   = Equals(prox['y'], curr['y'])
+        pc_avanca = GT(prox['pc'], curr['pc'])
+        parado    = And(Equals(prox['pc'], curr['pc']), GE(curr['pc'], Int(4)))
+        return Or(y_desce, And(y_igual, pc_avanca), And(y_igual, parado))
 
-    bmc_eventually(prop, 50)
+    animacao(declare, init, trans, P_estrela)
     return
 
 
@@ -578,6 +533,8 @@ def _(mo):
     * Explicação de funções relacinais para BitVecs, com e sem sinal;
     * Debug de código: BV(1,N) trocado com Int(1), índices e chaves erradas em listas e dicionários, k-indução(parte b), função gera_traco, etc;
     * Explicação do push e pop do solver e modificação função gera_traco com push e pop.
+
+    Link para o chat: https://claude.ai/share/ffbc0723-fcc8-422f-8036-22b39d82a36d
     """)
     return
 
