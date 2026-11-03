@@ -116,7 +116,7 @@ def _():
 def _():
     # Parâmetros do trabalho
     N = 18
-    MODO = "ASYNC"   # "SYNC" (todas em simultâneo) ou "ASYNC" (uma de cada vez)
+    MODO = "SYNC"   # "SYNC" (todas em simultâneo) ou "ASYNC" (uma de cada vez)
     return MODO, N
 
 
