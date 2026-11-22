@@ -328,7 +328,7 @@ def _(And, BVAdd, BVMul, Equals, Not, Or, Solver, pcA):
 
                 caso_base = And(And(base), Or([Not(inv(s)) for s in states]))
                 solver.add_assertion(caso_base)
-    
+
                 if solver.solve():
                     print(f"Falha caso base com k = {k}")
                     model = solver.get_model()
@@ -354,7 +354,7 @@ def _(And, BVAdd, BVMul, Equals, Not, Or, Solver, pcA):
                 step_case = And(inductive)
 
                 solver.add_assertion(step_case)
-    
+
                 if solver.solve():
                     print(f"Falha caso indutivo k = {k}")
 
@@ -484,7 +484,7 @@ def _(And, Not, Solver):
                     return False
 
                 solver.reset_assertions()
-            
+    
                 for i in range(k):
                     solver.add_assertion(P_estrela(s[i], s[i + 1]))
                 for i in range(k + 1):

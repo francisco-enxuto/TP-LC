@@ -8,14 +8,7 @@
     {
       "id": "Hbol",
       "code_hash": "15fa377aa6f41ee29552763f0e57a365",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -34,14 +27,7 @@
     {
       "id": "vblA",
       "code_hash": "1949fbeab29009b9ff55ac9ed1bbdfe8",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -86,14 +72,7 @@
     {
       "id": "Xref",
       "code_hash": "169c98d4cdeb926705f134d0bf73eb23",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -112,14 +91,7 @@
     {
       "id": "BYtC",
       "code_hash": "d6bea8ce3cca4a25e0644364fab75d07",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -138,14 +110,7 @@
     {
       "id": "Kclp",
       "code_hash": "b6a880cb9ae6750845141d4ddca92ecf",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -164,22 +129,8 @@
     {
       "id": "Hstk",
       "code_hash": "19905e8d44c0d6bc76b74b68cfc094f0",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Estado   0 : pc = 0, x = 0, y = 8, z = 0, inv = 12\nEstado   1 : pc = 1, x = 0, y = 8, z = 0, inv = 11\nEstado   2 : pc = 2, x = 0, y = 8, z = 0, inv = 10\nEstado   3 : pc = 0, x = 0, y = 4, z = 0, inv = 8\nEstado   4 : pc = 1, x = 0, y = 4, z = 0, inv = 7\nEstado   5 : pc = 2, x = 0, y = 4, z = 0, inv = 6\nEstado   6 : pc = 0, x = 0, y = 2, z = 0, inv = 6\nEstado   7 : pc = 1, x = 0, y = 2, z = 0, inv = 5\nEstado   8 : pc = 2, x = 0, y = 2, z = 0, inv = 4\nEstado   9 : pc = 0, x = 0, y = 1, z = 0, inv = 5\nEstado  10 : pc = 1, x = 0, y = 1, z = 0, inv = 4\nEstado  11 : pc = 3, x = 0, y = 1, z = 0, inv = 2\nEstado  12 : pc = 0, x = 0, y = 0, z = 0, inv = 4\nEstado  13 : pc = 4, x = 0, y = 0, z = 0, inv = 0\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "nWHF",
@@ -196,15 +147,8 @@
     },
     {
       "id": "iLit",
-      "code_hash": "a6056c56126678d1d3c010da4ed7ef08",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "code_hash": "e1c2b5517db7a665c6cf56b57510f949",
+      "outputs": [],
       "console": []
     },
     {
@@ -223,25 +167,8 @@
     {
       "id": "ROlb",
       "code_hash": "999c85a68ec09a98254d7f09bf5ee737",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/vnd.marimo+mimebundle": {
-              "text/html": "<pre class='text-xs'>True</pre>",
-              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAADJUlEQVR4Xu3cP4hcVRTA4XPfhoCFO9lgdmJQQVCMO5vWLk0KQdAmpFJQ7PyHhU2IEAgYwWCTXlLapEhjZ59GUijszIggChKzEyL4NhYRMu/KrFnYarfI7CacfF81UwzMubf6zX1zSwAAAABplDSTAAAAAEIfAAAAMnGiDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIBGhDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIJGHDv1ef+XLiHL2/zWpCxFluvmy1G/a9dGHidYKAAAAHnsPHfrb9for97qF+8/d/fOXO4/95AAAAJDQnof+Yn/l0xJxoUS835VyutR4I6JeaSejc4v9weUmut//nowvz9a21x/ciKZ80N5auzF7f2h59XQt3ddR42CU+m07GZ+bPTaQcB8AAABgLvY89Gd6/cHFqHEmmno+au1FNM+0k+FXO4V+r//KiyUWrtfanGyP1D96d7rvopQr7fro6lwmBwAAgIT2L/QjXmsnw9cXj7z6cndg4cA/t9bGO4X+oeXBZ7WJl9r14UebPxYcHZypEW9trA/fS7gPAAAAMBf7Fvq1xr8bt4dfbP/WO57oLw8uRanvRsTkwWcORtQf28n47blMDgAAAAntX+hHd29jMr64fQ13Cv3N//aXcnzrRB8AAADY3aMN/eXB+VLqU+1k9PlS//iJLprr0TSnZpfxHT62+vx02v0wbZpTs8f8l55dOXm/6UZ3b/781+5jAQAAwJNpz0N/8ejgk1LrhQe35X/fTkbvbC310rHBC900rtWoNyPKbyXqiWias1u37j/dX31zIbpLNeJwlPgpuubj9vbar0/mVgEAAMDu5hr6AAAAwKMl9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJ/AfQQww/EZg0mgAAABBkZUJHN0IxM0U2NzRGRUQ4REY5MUnOFnsAAAAASUVORK5CYII="
-            }
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Falha caso indutivo k = 1\nInvariante v\u00e1lido para k = 2\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "qnkX",
@@ -259,25 +186,8 @@
     {
       "id": "TqIu",
       "code_hash": "f690bab01d730892027b26b1558925fb",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/vnd.marimo+mimebundle": {
-              "text/html": "<pre class='text-xs'>False</pre>",
-              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAAEEUlEQVR4Xu3bTWhcVRiA4e9Mmiys7UyDyaRaq4Jok4lFVHBVEN0qFulK/MGNoKKi1IXgRlyVqlsX/oCIUoQuRHcFEf8QV61kEgu6stZMEqWTVlti5h6JOuimVXFC7fF5lgfucM53Vi93bgoAAACgGKmYkwAAAABCHwAAAErijT4AAAAUROgDAABAQYQ+AAAAFEToAwAAQEGEPgAAABRE6AMAAEBBhD4AAAAUROgDAABAQYQ+AAAAFEToAwAAQEGEPgAAABRE6AMAAEBBhD4AAAAUROgDAABAQYQ+AAAAFOT8hX6rNVJfyrMRMRSRhrud9raC5goAAADnxUBCf/P41D0pxWsR6ac/TlHt7XbmXvmrU41etnNbb7X3mdAHAACAf29woV+L3d352T3/dEtCHwAAAAZn3UO/MTF9S87VSxExmiMWc649eHJh5tP+Ec4V+o1m67kc+d6IqOWIwxuGao/8cHzmm7VnG+PTd+VU7Y8cI5Hym93O3NMRkQc3GgAAALjwrHvo17dft6W3cnrDqfmvFhsTUw/kiEe787M39Ed1ttCvb91xY1S1g5uGlyePHTt2ut5s3TpSxeeLi+1T9ea1V6UY+iTn2q7uWP6mvlS9Gym92p2fffvCuwIAAAAYnMGFfoq17/FP/Lq1FMf/HPN9G8daExtqea7bmd3SXztb6De2Tl6Rq9qRiHhquLd6YGnp6Mn+M43x1pO5Fld359sPr63VJ1p7csQdy/Pt+wc3GgAAALjwDC70z/KNfmNix5VVDD2bcrU9RYzkqLW6nXajP6pz/XW/vnX6plRVj0fEbRFx8ERn/ImID1br4619kfJ9EdH5/XdGIvLhbmfu7gvvCgAAAGBw1j/0m1Mf50ivdzvtlzddes0ltd7wV3839PvGxloXr9TyRznnF5cX5t7Y3Jx6LKW0o/9GHwAAAPjNuod+fWLqaOT0ULfTfr/RnLozRxzodmY3RkS1toFmc+fGM7F6fOjnlcuHhy/qdTpf/Li23hhrXZ9TGu8uzBwaG2ttXBnKH+acnl/utN8avXT68l6v+rxXq9166ruZuS1bp3at1qrZk99++b2LBQAA4P9s3UO/MT65O6e0PyJ+iEiH1to+RX7vRGf2nf7gNzcnn0mRHo2IM6tVuvnHxfb86MRUqxfxQlTRihQ5Rzq43GnvjYje2nObmtO3D0W1L0eMRoojUdUe6S7MfP1/vkwAAAAYSOgDAAAA/w1CHwAAAAoi9AEAAKAgQh8AAAAKIvQBAACgIEIfAAAACiL0AQAAoCBCHwAAAAoi9AEAAKAgQh8AAAAKIvQBAACgIEIfAAAACiL0AQAAoCBCHwAAAAoi9AEAAKAgQh8AAAAKIvQBAACgIEIfAAAACiL0AQAAoCC/AJAIRz+WpHigAAAAEGRlQkc0RDgwMEQwQTBFNkQyNDJFrmVzQwAAAABJRU5ErkJggg=="
-            }
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Falha caso indutivo k = 1\nFalha caso indutivo k = 2\nFalha caso indutivo k = 3\nFalha caso base com k = 4\nEstado   0 : pc = 0, x = 156, y =   4, z =   0, inv = 1100\nEstado   1 : pc = 1, x = 156, y =   4, z =   0, inv = 1099\nEstado   2 : pc = 2, x = 156, y =   4, z =   0, inv = 1098\nEstado   3 : pc = 5, x = 156, y =   4, z =   0, inv = 1095\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "Vxnm",
@@ -295,14 +205,7 @@
     {
       "id": "DnEU",
       "code_hash": "d1d8ae22c8527c03526f74e337749d6b",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -321,25 +224,8 @@
     {
       "id": "ecfG",
       "code_hash": "94a93ce553b8baba042fa286315fe3eb",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/vnd.marimo+mimebundle": {
-              "text/html": "<pre class='text-xs'>True</pre>",
-              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAADJUlEQVR4Xu3cP4hcVRTA4XPfhoCFO9lgdmJQQVCMO5vWLk0KQdAmpFJQ7PyHhU2IEAgYwWCTXlLapEhjZ59GUijszIggChKzEyL4NhYRMu/KrFnYarfI7CacfF81UwzMubf6zX1zSwAAAABplDSTAAAAAEIfAAAAMnGiDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIBGhDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIJGHDv1ef+XLiHL2/zWpCxFluvmy1G/a9dGHidYKAAAAHnsPHfrb9for97qF+8/d/fOXO4/95AAAAJDQnof+Yn/l0xJxoUS835VyutR4I6JeaSejc4v9weUmut//nowvz9a21x/ciKZ80N5auzF7f2h59XQt3ddR42CU+m07GZ+bPTaQcB8AAABgLvY89Gd6/cHFqHEmmno+au1FNM+0k+FXO4V+r//KiyUWrtfanGyP1D96d7rvopQr7fro6lwmBwAAgIT2L/QjXmsnw9cXj7z6cndg4cA/t9bGO4X+oeXBZ7WJl9r14UebPxYcHZypEW9trA/fS7gPAAAAMBf7Fvq1xr8bt4dfbP/WO57oLw8uRanvRsTkwWcORtQf28n47blMDgAAAAntX+hHd29jMr64fQ13Cv3N//aXcnzrRB8AAADY3aMN/eXB+VLqU+1k9PlS//iJLprr0TSnZpfxHT62+vx02v0wbZpTs8f8l55dOXm/6UZ3b/781+5jAQAAwJNpz0N/8ejgk1LrhQe35X/fTkbvbC310rHBC900rtWoNyPKbyXqiWias1u37j/dX31zIbpLNeJwlPgpuubj9vbar0/mVgEAAMDu5hr6AAAAwKMl9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJ/AfQQww/EZg0mgAAABBkZUJHN0IxM0U2NzRGRUQ4REY5MUnOFnsAAAAASUVORK5CYII="
-            }
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Falha caso indutivo k = 1\nFalha caso indutivo k = 2\nFalha caso indutivo k = 3\nFalha caso indutivo k = 4\nFalha caso indutivo k = 5\nFalha caso indutivo k = 6\nFalha caso indutivo k = 7\nFalha caso indutivo k = 8\nFalha caso indutivo k = 9\nFalha caso indutivo k = 10\nFalha caso indutivo k = 11\nFalha caso indutivo k = 12\nFalha caso indutivo k = 13\nFalha caso indutivo k = 14\nFalha caso indutivo k = 15\nFalha caso indutivo k = 16\nFalha caso indutivo k = 17\nFalha caso indutivo k = 18\nFalha caso indutivo k = 19\nFalha caso indutivo k = 20\nFalha caso indutivo k = 21\nFalha caso indutivo k = 22\nFalha caso indutivo k = 23\nFalha caso indutivo k = 24\nFalha caso indutivo k = 25\nFalha caso indutivo k = 26\nFalha caso indutivo k = 27\nFalha caso indutivo k = 28\nFalha caso indutivo k = 29\nFalha caso indutivo k = 30\nFalha caso indutivo k = 31\nFalha caso indutivo k = 32\nFalha caso indutivo k = 33\nFalha caso indutivo k = 34\nFalha caso indutivo k = 35\nFalha caso indutivo k = 36\nFalha caso indutivo k = 37\nFalha caso indutivo k = 38\nFalha caso indutivo k = 39\nFalha caso indutivo k = 40\nFalha caso indutivo k = 41\nFalha caso indutivo k = 42\nFalha caso indutivo k = 43\nFalha caso indutivo k = 44\nFalha caso indutivo k = 45\nFalha caso indutivo k = 46\nInvariante v\u00e1lido para k = 47\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "Pvdt",
@@ -356,15 +242,8 @@
     },
     {
       "id": "ZBYS",
-      "code_hash": "56e6dbce1cc7c4774eda6da956aecdde",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "code_hash": "b626ba4c79735a87de238044b2d3d314",
+      "outputs": [],
       "console": []
     },
     {
@@ -383,25 +262,8 @@
     {
       "id": "nHfw",
       "code_hash": "bfd1f55f346a5feedaa37476a7df7485",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/vnd.marimo+mimebundle": {
-              "text/html": "<pre class='text-xs'>True</pre>",
-              "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/oAAAAvCAYAAABT/bGgAAADJUlEQVR4Xu3cP4hcVRTA4XPfhoCFO9lgdmJQQVCMO5vWLk0KQdAmpFJQ7PyHhU2IEAgYwWCTXlLapEhjZ59GUijszIggChKzEyL4NhYRMu/KrFnYarfI7CacfF81UwzMubf6zX1zSwAAAABplDSTAAAAAEIfAAAAMnGiDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIBGhDwAAAIkIfQAAAEhE6AMAAEAiQh8AAAASEfoAAACQiNAHAACARIQ+AAAAJCL0AQAAIJGHDv1ef+XLiHL2/zWpCxFluvmy1G/a9dGHidYKAAAAHnsPHfrb9for97qF+8/d/fOXO4/95AAAAJDQnof+Yn/l0xJxoUS835VyutR4I6JeaSejc4v9weUmut//nowvz9a21x/ciKZ80N5auzF7f2h59XQt3ddR42CU+m07GZ+bPTaQcB8AAABgLvY89Gd6/cHFqHEmmno+au1FNM+0k+FXO4V+r//KiyUWrtfanGyP1D96d7rvopQr7fro6lwmBwAAgIT2L/QjXmsnw9cXj7z6cndg4cA/t9bGO4X+oeXBZ7WJl9r14UebPxYcHZypEW9trA/fS7gPAAAAMBf7Fvq1xr8bt4dfbP/WO57oLw8uRanvRsTkwWcORtQf28n47blMDgAAAAntX+hHd29jMr64fQ13Cv3N//aXcnzrRB8AAADY3aMN/eXB+VLqU+1k9PlS//iJLprr0TSnZpfxHT62+vx02v0wbZpTs8f8l55dOXm/6UZ3b/781+5jAQAAwJNpz0N/8ejgk1LrhQe35X/fTkbvbC310rHBC900rtWoNyPKbyXqiWias1u37j/dX31zIbpLNeJwlPgpuubj9vbar0/mVgEAAMDu5hr6AAAAwKMl9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJCH0AAABIROgDAABAIkIfAAAAEhH6AAAAkIjQBwAAgESEPgAAACQi9AEAACARoQ8AAACJ/AfQQww/EZg0mgAAABBkZUJHN0IxM0U2NzRGRUQ4REY5MUnOFnsAAAAASUVORK5CYII="
-            }
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Falha caso indutivo com k = 1\nProvado com k=2\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "xXTn",
