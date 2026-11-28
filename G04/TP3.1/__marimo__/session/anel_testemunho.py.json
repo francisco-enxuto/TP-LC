@@ -1,21 +1,81 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.25.2",
+    "marimo_version": "0.25.1",
     "script_metadata_hash": "03d27c1231abb0b0eacd5814b2af1fa6"
   },
   "cells": [
     {
       "id": "setup",
-      "code_hash": "20bdf151dda2d7d0d6b0052b76adb905",
-      "outputs": [],
+      "code_hash": "1c1752fba25276154cc9fe594d882f79",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Hbol",
-      "code_hash": "fdb7c5d5581b2e3239be4edb0ac8e17a",
-      "outputs": [],
+      "code_hash": "8403ae594073bf45d19c3bb74bebc409",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "79e7f0b0b28252eab4abcc1e52a6075d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "fbdbf587b39ccde4630b69b59fda7a31",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "01feb6afbd22f60ea1243fb76f882618",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>False</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Falha caso indutivo k = 1\nFalha caso indutivo k = 2\nFalha caso indutivo k = 3\nFalha caso indutivo k = 4\nFalha caso base com k = 5\n[c0_0 = False,\n t0_1 = True,\n c0_1 = False,\n w0_2 = False,\n t0_0 = True,\n t1_1 = True,\n c1_1 = False,\n w1_1 = True,\n t1_3 = True,\n w1_4 = False,\n w0_3 = True,\n c1_2 = True,\n t1_2 = True,\n w1_3 = False,\n c1_3 = True,\n w0_1 = False,\n w1_2 = False,\n t0_3 = True,\n c1_0 = False,\n t0_2 = True,\n w1_0 = False,\n c1_4 = True,\n c0_2 = False,\n w0_0 = False,\n c0_3 = False,\n t1_0 = True,\n w0_4 = False,\n t1_4 = True,\n t0_4 = True,\n c0_4 = True]\n",
+          "mimetype": "text/plain"
+        }
+      ]
     }
   ]
 }
